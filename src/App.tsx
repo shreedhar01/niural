@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 const App: React.FC = () => {
     return (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-between md:items-center">
             <Header />
             <main>
                 <Outlet />

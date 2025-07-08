@@ -2,7 +2,7 @@ import React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 
 const button = cva(
-    "inline-flex items-center justify-center rounded m-2 text-center", {
+    "inline-flex items-center justify-between", {
     variants: {
         size: {
             big: "h-12 px-5 text-base",
