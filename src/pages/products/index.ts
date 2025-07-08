@@ -1,4 +1,4 @@
-import Ap_and_ar from "./Ap_and_ar";
+import Ap_and_ar from "./Pay";
 import Contractor_management from "./Contractor_management";
 import HireEmployees from "./HireEmployees";
 import Hire_contractor from "./Hire_contractors";
