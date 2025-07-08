@@ -10,7 +10,6 @@ const App: React.FC = () => {
                 <Outlet />
             </main>
             <Footer />
-
         </div>
     )
 }

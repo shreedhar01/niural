@@ -13,7 +13,7 @@ const Header: React.FC = () => {
         },
         {
             section: "Solutions",
-            services: ["Payroll", "HR", "Operations"]
+            services: ["Payrolls", "HR", "Operations"]
         },
         {
             section: "Resources",
@@ -32,7 +32,7 @@ const Header: React.FC = () => {
                     <img className=" h-[24px]" src={logo} alt="brand logo" />
                 </Link>
                 <EllipsisVertical className=" text- " />
-                <ul className="flex gap-2 ">
+                <ul className="flex gap-2">
                     {
                         headerLists.map(item => (
 
@@ -44,7 +44,8 @@ const Header: React.FC = () => {
                             >
                                 {item} {item === hover ? <Minus /> : <ChevronDown />}
                                 {hover === item && (
-                                    <div className="absolute top-10 left-1 rounded p-2 shadow-2xl min-w-80 z-80">
+                                    <div className="absolute top-10 left-1 rounded p-2 shadow-2xl min-w-80 z-50 bg-gray-50 border-gray-200"
+                                    >
                                         <BelowCard
                                             items={servicesLists.find(sec => sec.section === item)?.services || []}
                                             link={`/${item.toLowerCase()}`}
