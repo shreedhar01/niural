@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { logo } from "../assets";
 import { ChevronDown, Minus, EllipsisVertical } from 'lucide-react';
+import { Button } from "./index";
 
 const Header: React.FC = () => {
     const [hover, setHover] = useState("")
@@ -61,6 +62,19 @@ const Header: React.FC = () => {
                     </Link>
                 </ul>
             </div>
+            <div className="flex items-center gap-2">
+                <Button
+                    size="mid"
+                    variant="secondary"
+                    children="Sign In"
+                    onClick={()=>(window.open("https://app.niural.com/auth","_blank","noopener,noreferrer"))}
+                />
+                <Button
+                    size="mid"
+                    children="Book a Demo"
+                    onClick={() => (window.open("https://meetings.hubspot.com/niural/book-a-demo?uuid=0b70745e-c8ca-4d3d-a995-914c278918df", '_blank', 'noopener,noreferrer'))}
+                />
+            </div>
         </header>
     )
 }
@@ -70,15 +84,15 @@ export default Header
 interface IBelowCard {
     items: string[],
     imag?: string,
-    link:string
+    link: string
 }
 
-const BelowCard: React.FC<IBelowCard> = ({ items, imag,link }) => {
+const BelowCard: React.FC<IBelowCard> = ({ items, imag, link }) => {
     return (
         <div>
             <div>
                 {items.map((item, index) => (
-                    <Link to={`${link}/${item.replaceAll(" ","_").toLowerCase()}`}>
+                    <Link to={`${link}/${item.replaceAll(" ", "_").toLowerCase()}`}>
                         <p className="flex flex-col m-2 hover:text-green-500 cursor-pointer" key={index}>{item}</p>
                     </Link>
                 )
