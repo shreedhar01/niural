@@ -48,7 +48,7 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path='/niural' element={<App />} >
           <Route index element={<Landing />} />
-          <Route path='/products'>
+          <Route path='products'>
             <Route path='peo' element={<Peo />} />
             <Route path='hris' element={<Hris />} />
             <Route path='wallet' element={<Wallet />} />
@@ -59,14 +59,14 @@ createRoot(document.getElementById('root')!).render(
             <Route path='hire_contractors' element={<Hire_contractor />} />
             <Route path='contractor_management' element={<Contractor_management />} />
           </Route>
-          <Route path='/company'>
+          <Route path='company'>
             <Route path='careers' element={<Careers />} />
             <Route path='contact_us' element={<ContactUs />} />
             <Route path='legal' element={<Legal />} />
             <Route path='partner_program' element={<PartnerProgram />} />
             <Route path='press_&_media' element={<PressAndMedia />} />
           </Route>
-          <Route path='/resources'>
+          <Route path='resources'>
             <Route path='ai_risk_analyzer' element={<AiRiskAnalyzer />} />
             <Route path='blogs' element={<Blogs />} />
             <Route path='case_studies' element={<CaseStudies />} />
@@ -74,12 +74,12 @@ createRoot(document.getElementById('root')!).render(
             <Route path='knowledge_base' element={<KnowledgeBase />} />
             <Route path='niural_documentation' element={<NiuralDocumentation />} />
           </Route>
-          <Route path='/solutions'>
+          <Route path='solutions'>
             <Route path='hr' element={<HR />} />
             <Route path='operations' element={<Operations />} />
             <Route path='payrolls' element={<Payrolls />} />
           </Route>
-          <Route path='/pricing' element={<Pricing />} />
+          <Route path='pricing' element={<Pricing />} />
           <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
