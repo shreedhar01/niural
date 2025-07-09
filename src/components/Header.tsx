@@ -41,7 +41,7 @@ const Header: React.FC = () => {
         <header className="flex justify-center items-center w-full">
             <div className="flex justify-between items-center w-full  md:w-[1280px] gap-2  p-2 relative">
                 <div className="flex items-center gap-8">
-                    <Link to="/">
+                    <Link to="/niural">
                         <img className=" h-[24px]" src={logo} alt="brand logo" />
                     </Link>
                     <EllipsisVertical className=" hidden md:block " />
@@ -61,7 +61,7 @@ const Header: React.FC = () => {
                                         >
                                             <BelowCard
                                                 items={servicesLists.find(sec => sec.section === item)?.services || []}
-                                                link={`/${item.toLowerCase()}`}
+                                                link={`/niural/${item.toLowerCase()}`}
                                             />
                                         </div>
                                     )}
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
                             ))
 
                         }
-                        <Link to="/pricing">
+                        <Link to="/niural/pricing">
                             <li className=" hover:text-green-500 cursor-pointer p-2">Pricing</li>
                         </Link>
                     </ul>
@@ -124,7 +124,7 @@ const Header: React.FC = () => {
                                             children={item}
                                             variant="secondary"
                                             size="mid"
-                                            onClick={() => navigate(`${which.toLowerCase()}/${item.toLowerCase().replaceAll(" ", "_")}`)}
+                                            onClick={() => navigate(`/niural/${which.toLowerCase()}/${item.toLowerCase().replaceAll(" ", "_")}`)}
                                         />
                                     ))
                                 }
