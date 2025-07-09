@@ -8,4 +8,8 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  base: '/niural/', // ← Add this line
+  build: {
+    outDir: 'dist'
+  }
 })
