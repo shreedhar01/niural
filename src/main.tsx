@@ -46,7 +46,7 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<App />} >
+        <Route path='/niural' element={<App />} >
           <Route index element={<Landing />} />
           <Route path='/products'>
             <Route path='peo' element={<Peo />} />
