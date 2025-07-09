@@ -23,8 +23,8 @@ const button = cva(
     }
 })
 
-export interface ButtonProps
-    extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "disabled">,
+export interface ButtonProps extends
+    Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "disabled">,
     VariantProps<typeof button> {
     icon?: React.ReactNode;
     iconPosition?: "left" | "right";

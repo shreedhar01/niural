@@ -1,5 +1,42 @@
 @import "tailwindcss";
 
+@keyframes outline-spin {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.outline-animate-spin {
+  position: relative;
+  border-radius: 1rem; /* matches rounded-2xl */
+}
+
+.outline-animate-spin::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  padding: 2px;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #10b981, #f59e0b, #ef4444, #3b82f6);
+  background-size: 300% 300%;
+  border-radius: inherit;
+  animation: outline-spin 3s ease infinite;
+  z-index: -1;
+}
+
+.outline-animate-spin::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: white; /* or your banner background color */
+  border-radius: calc(1rem - 2px);
+  z-index: -1;
+}
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
