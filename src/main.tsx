@@ -6,7 +6,8 @@ import App from './App';
 import {
   Landing,
   Pricing,
-  NotFound
+  NotFound,
+  Announcement
 } from "./pages"
 import {
   Ap_and_ar,
@@ -80,6 +81,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path='payrolls' element={<Payrolls />} />
           </Route>
           <Route path='pricing' element={<Pricing />} />
+          <Route path="announcement/:id" element={<Announcement />} />
           <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>

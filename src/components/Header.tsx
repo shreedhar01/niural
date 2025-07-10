@@ -7,7 +7,8 @@ import {
     EllipsisVertical,
     Menu,
     ChevronLeft,
-    X
+    X,
+    ArrowRight
 } from 'lucide-react';
 import { Button } from "./index";
 
@@ -38,7 +39,21 @@ const Header: React.FC = () => {
     ]
 
     return (
-        <header className="flex justify-center items-center w-full">
+        <header className="flex flex-col justify-center items-center w-full">
+            {/* left side */}
+            <div className="w-full flex items-center justify-center bg-gradient-to-r from-violet-900 to-purple-400">
+                <p className="text-xs md:text-base text-white p-2 flex md:gap-4 gap-2">
+                    <span>Niural raises $31M to Transform Global CFO and People Operations</span>
+                    <Link to="/niural/announcement/we-are-getting-bigger">
+                        <span className=" hover:underline flex justify-center items-center md:gap-2">
+                            Read Announcement
+                            <ArrowRight size={16} />
+                        </span>
+                    </Link>
+                </p>
+            </div>
+
+            {/* right side */}
             <div className="flex justify-between items-center w-full  md:w-[1280px] gap-2  p-2 relative">
                 <div className="flex items-center gap-8">
                     <Link to="/niural">
@@ -85,7 +100,7 @@ const Header: React.FC = () => {
                     />
                     {
                         float &&
-                        <div className="flex flex-col bg-white py-6 top-2 left-2 right-2  absolute rounded-2xl shadow-2xl border-gray-200">
+                        <div className="flex flex-col bg-white py-6 top-2 left-2 right-2  absolute rounded-2xl shadow-2xl border-gray-200 z-50">
                             <div className="flex justify-between items-center">
                                 {
                                     which ? <Button
