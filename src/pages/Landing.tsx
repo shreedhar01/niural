@@ -82,8 +82,8 @@ const Landing: React.FC = () => {
 
                 {/* image gallary */}
                 <div className="p-2 mt-10 relative" >
-                    <div className="image_card w-[800] h-[500]">
-                        <img width='800' height="500" src={img} alt="hero images" className="rounded-2xl" />
+                    <div className="image_card w-[800] h-[400]">
+                        <img width='800' height="400" src={img} alt="hero images" className="rounded-2xl" />
                     </div>
                     <button
                         className={` absolute ${currentIndex === 2 ? "text-white": "text-gray-900"} right-10 bottom-5 cursor-pointer`}
