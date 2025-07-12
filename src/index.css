@@ -33,3 +33,40 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes infinite_scroll {
+  0%{
+     transform: translateX(0)
+  }
+  100%{
+    transform: translateX(-100%)
+  }
+}
+
+.animate-infinite-scroll {
+  animation: infinite_scroll 70s linear infinite;
+}
+
+.animate_paused {
+  animation-play-state: paused
+}
+
+
+.horizontal-mask {
+  @apply relative;
+}
+
+.horizontal-mask::before,
+.horizontal-mask::after {
+  @apply content-[''] absolute top-0 bottom-0 w-[120px] z-10
+}
+
+.horizontal-mask::before {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.horizontal-mask::after {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}

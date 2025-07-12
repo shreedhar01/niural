@@ -9,7 +9,17 @@ import {
     hero1,
     hero2,
     hero3
-} from "../assets/hero/hero"
+} from "../assets/landing_images/hero"
+
+import {
+    customer1,
+    customer2,
+    customer3,
+    customer4,
+    customer5,
+    customer6,
+    customer7
+} from "../assets/landing_images/trusted_company"
 
 const Landing: React.FC = () => {
     useEffect(() => {
@@ -17,7 +27,7 @@ const Landing: React.FC = () => {
     }, []);
 
 
-
+    //here section
     const [img, setImg] = useState(hero1)
     const [currentIndex, setCurrentIndex] = useState(0);
     const images = [hero1, hero2, hero3];
@@ -43,11 +53,17 @@ const Landing: React.FC = () => {
             clearInterval(intervalId);
         };
     }, []);
+
+
+    //trusted customer section
+    const [isScrollPaused, setIsScrollPaused] = useState(false)
+    const trusted_customer_logo = [customer1, customer2, customer3, customer4, customer5, customer6, customer7]
+
     return (
         <div className=" flex flex-col justify-center items-center w-full pt-[200px]">
 
             {/* hero section */}
-            <div className="flex flex-col md:flex-row w-full justify-start items-center md:w-[1280px] ">
+            <div className="flex flex-col md:flex-row w-full justify-start items-center md:w-[1280px] mb-8 ">
                 <div className="m-2">
                     <div className="card ">
                         <div className="bg-white p-2 rounded-2xl hover:bg-gray-100 shadow">
@@ -86,25 +102,48 @@ const Landing: React.FC = () => {
                         <img width='800' height="400" src={img} alt="hero images" className="rounded-2xl" />
                     </div>
                     <button
-                        className={` absolute ${currentIndex === 2 ? "text-white": "text-gray-900"} right-10 bottom-5 cursor-pointer`}
+                        className={` absolute ${currentIndex === 2 ? "text-white" : "text-gray-900"} right-10 bottom-5 cursor-pointer`}
                         onClick={() => setCurrentIndex(2)}
                     >
                         {<Minus size={40} />}
                     </button>
                     <button
-                        className={`absolute ${currentIndex === 1 ? "text-white": "text-gray-900"} right-18 bottom-5 cursor-pointer`}
+                        className={`absolute ${currentIndex === 1 ? "text-white" : "text-gray-900"} right-18 bottom-5 cursor-pointer`}
                         onClick={() => setCurrentIndex(1)}
                     >
                         {<Minus size={40} />}
                     </button>
                     <button
-                        className={` absolute ${currentIndex === 0 ? "text-white": "text-gray-900"} right-26 bottom-5 cursor-pointer`}
+                        className={` absolute ${currentIndex === 0 ? "text-white" : "text-gray-900"} right-26 bottom-5 cursor-pointer`}
                         onClick={() => setCurrentIndex(0)}
                     >
                         {<Minus size={40} />}
                     </button>
                 </div>
             </div>
+
+            {/* trusted Company */}
+            <div className="md:grid md:grid-cols-5 w-full justify-start items-center md:w-[1280px] md:mb-8">
+                <div className="col-span-1 ml-2 md:ml-0 gap-4 mb-4">
+                    <p className="text-base md:text-lg  mt-4">Trusted by Hundreds of Companies, from Innovative Startups to Global Enterprises</p>
+                </div>
+
+                {/* sliding images */}
+                <div
+                    className="col-span-4 m-2 md:m-0 overflow-hidden flex items-center justify-center horizontal-mask"
+                    onMouseEnter={() => setIsScrollPaused(true)}
+                    onMouseLeave={() => setIsScrollPaused(false)}
+                >
+                    <div className={`flex  items-center hover:  gap-25 animate-infinite-scroll ${isScrollPaused ? "animate_paused" : ""}`}>
+                        {
+                            [...trusted_customer_logo, ...trusted_customer_logo, ...trusted_customer_logo].map((item, index) =>
+                                <img key={index} className="h-[40px] flex-shrink-0" src={item} alt="" />)
+                        }
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     )
 }
