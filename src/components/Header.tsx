@@ -156,7 +156,7 @@ const Header: React.FC = () => {
 
             {
                 float &&
-                <div className="flex flex-col bg-white py-6 top-2 left-2 right-2  absolute rounded-2xl shadow-2xl border-gray-200 z-50">
+                <div className="flex flex-col bg-white py-6 top-2 left-2 right-2  fixed rounded-2xl shadow-2xl border-gray-200 z-50">
                     <div className="flex justify-between items-center">
                         {
                             which ? <Button
