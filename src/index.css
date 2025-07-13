@@ -12,7 +12,6 @@
   inset: -1px;
   z-index: -1;
   animation: border-spin 5s linear infinite;
-  /* Remove will-change to prevent performance issues */
 }
 
 .image_card{
@@ -69,4 +68,23 @@
 .horizontal-mask::after {
   right: 0;
   background: linear-gradient(to left, white, transparent);
+}
+
+
+
+
+/* loading effect */
+.loading_effect{
+  @apply relative  rounded-full bg-transparent p-2 ;
+  --loading-width: 10%
+}
+
+.loading_effect::before{
+  @apply absolute content-[""] bg-green-400 z-[-1] rounded-2xl
+  inset-1;
+  width: var(--loading-width);
+}
+
+.vertical_mask{
+  
 }

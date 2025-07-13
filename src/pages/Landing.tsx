@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { Button, TitleBanner } from "../components";
+import { Button, Loading, TitleBanner } from "../components";
 import {
     Sparkles,
-    Minus
+    Minus,
+    Box
 } from 'lucide-react';
 
+//hero
 import {
     hero1,
     hero2,
     hero3
 } from "../assets/landing_images/hero"
 
+
+//trusted company
 import {
     customer1,
     customer2,
@@ -20,6 +24,16 @@ import {
     customer6,
     customer7
 } from "../assets/landing_images/trusted_company"
+
+
+//products
+import {
+    product1,
+    product2,
+    product3,
+    product4,
+    product5
+} from "../assets/landing_images/products"
 
 const Landing: React.FC = () => {
     useEffect(() => {
@@ -58,6 +72,36 @@ const Landing: React.FC = () => {
     //trusted customer section
     const [isScrollPaused, setIsScrollPaused] = useState(false)
     const trusted_customer_logo = [customer1, customer2, customer3, customer4, customer5, customer6, customer7]
+
+    //our products
+    const products = ["US Payroll", "US PEO", "EOR", "Contractor Management", "Niural Pay"]
+    const productsImage = [product1, product2, product3, product4, product5]
+    const [loadingNumber, setLoadingNumber] = useState<number>(0)
+    const [lodeItem, setLodeItem] = useState<number>(0)
+
+    useEffect(() => {
+        const changeIndex = setInterval(() => {
+            setLodeItem(pre => {
+                if (pre < products.length - 1) return pre + 1;
+                return 0
+            })
+            setLoadingNumber(0)
+        }, 4000)
+
+        const loder = setInterval(() => {
+            setLoadingNumber(pre => {
+                if (pre < 100) return pre + 1;
+                // clearInterval(loadingNumber) 
+                return 100
+            })
+        }, 40)
+
+        return () => {
+            clearInterval(loder)
+            clearInterval(changeIndex)
+        }
+
+    }, [])
 
     return (
         <div className=" flex flex-col justify-center items-center w-full pt-[200px]">
@@ -143,7 +187,49 @@ const Landing: React.FC = () => {
                 </div>
             </div>
 
+            {/* our products */}
+            <div className="flex flex-col w-full justify-center items-center md:w-[1280px] mt-24 ">
+                <TitleBanner
+                    icon={<Box className="text-green-500" size={16} />}
+                    iconPosition="left"
+                    className="shadow rounded gap-2 "
+                    children="Our Products"
+                />
+                <div className="mt-4 md:w-[1000px]">
+                    <p className="text-2xl md:text-4xl text-center font-medium">The Ingenuity of Startups, Reliability of Enterprise, and Precision of World-Class Engineering</p>
+                </div>
 
+                <div className="flex items-center justify-center gap-2 rounded-3xl shadow border-green-600 p-2 m-8 md:flex-wrap lg:flex-nowrap overflow-x-auto md:overflow-x-visible ">
+                    {
+                        products.map((item, index) =>
+                            index === lodeItem ?
+                                <Loading
+                                    loading={loadingNumber}
+                                    children={item}
+                                    onClick={() => setLodeItem(index)}
+                                />
+                                :
+                                <Loading
+                                    children={item}
+                                    onClick={() => setLodeItem(index)}
+                                />
+                        )
+                    }
+                </div>
+            </div>
+            <div className="flex justify-center items-end bg-gradient-to-t from-green-100 to-white  w-full relative min-h-[240px] gap-2 md:min-h-[592px] overflow-hidden ">
+                <div className="flex flex-col w-full justify-center items-center md:w-[1280px] mt-4 mx-4 absolute top-5 ">
+                    <img className="rounded-2xl " src={productsImage[lodeItem]} alt="" />
+                </div>
+                {
+                    window.innerWidth > 768 ?
+                <Button
+                    onClick={() => (window.open("https://app.niural.com/auth/employer/signup", "_blank", "noopener,noreferrer"))}
+                    className="rounded shadow absolute bottom-5"
+                    children="Get Started"
+                /> : ""
+                }
+            </div>
         </div>
     )
 }
