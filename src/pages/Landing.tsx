@@ -3,7 +3,9 @@ import { Button, Loading, TitleBanner } from "../components";
 import {
     Sparkles,
     Minus,
-    Box
+    Box,
+    Heart,
+    Rocket
 } from 'lucide-react';
 
 //hero
@@ -34,6 +36,18 @@ import {
     product4,
     product5
 } from "../assets/landing_images/products"
+
+
+//benefits
+import {
+    benefit1,
+    benefit2,
+    benefit3,
+    benefit4,
+    benefit5,
+    benefit6
+} from "../assets/landing_images/benefits"
+import { Card } from "../components/landing_components";
 
 const Landing: React.FC = () => {
     useEffect(() => {
@@ -102,6 +116,47 @@ const Landing: React.FC = () => {
         }
 
     }, [])
+
+
+    //benefits
+    const benefits = [
+        {
+            heading: "Automated Payroll & Compliance",
+            info: "Eliminate manual errors and automatically comply with regulatory changes.",
+            image: benefit1,
+            size: "small"
+        },
+        {
+            heading: "Hire Your Workforce Anywhere",
+            info: "Expand your team globally without the administrative burden.",
+            image: benefit2,
+            size: "big"
+        },
+        {
+            heading: "Performance Driven Success",
+            info: "Track and analyze team performance toward business goals to maximize results.",
+            image: benefit3,
+            size: "big"
+        },
+        {
+            heading: "Enhanced Cash Management",
+            info: "Gain better control over cash flow with automated AR & AP processes.",
+            image: benefit4,
+            size: "small"
+        },
+        {
+            heading: "Multipurpose Wallet",
+            info: "Optimize your cash flow with customizable, multi-currency wallets.",
+            image: benefit5,
+            size: "small"
+        },
+        {
+            heading: "ACentralized HRIS for Growing Teams",
+            info: "Automate HR admin tasks to keep your focus on people, performance, and growth.",
+            image: benefit6,
+            size: "big"
+        },
+    ] as const
 
     return (
         <div className=" flex flex-col justify-center items-center w-full pt-[200px]">
@@ -223,12 +278,56 @@ const Landing: React.FC = () => {
                 </div>
                 {
                     window.innerWidth > 768 ?
-                <Button
-                    onClick={() => (window.open("https://app.niural.com/auth/employer/signup", "_blank", "noopener,noreferrer"))}
-                    className="rounded shadow absolute bottom-5"
-                    children="Get Started"
-                /> : ""
+                        <Button
+                            onClick={() => (window.open("https://app.niural.com/auth/employer/signup", "_blank", "noopener,noreferrer"))}
+                            className="rounded shadow absolute bottom-5"
+                            children="Get Started"
+                        /> : ""
                 }
+            </div>
+
+            {/* benefits */}
+            <div className="flex flex-col w-full justify-start md:w-[1280px] mt-24 ">
+                <div className="flex flex-col items-start  justify-start m-2">
+                    <TitleBanner
+                        className="gap-2 shadow rounded"
+                        icon={<Heart className="text-green-500" size={16} />}
+                        iconPosition="left"
+                        children="Benefits"
+                    />
+
+                    <p
+                        className="flex items-center text-2xl md:text-5xl font-medium gap-4 mt-2 md:mt-4"
+                    >
+                        Businesses'
+                        <span
+                            className="flex bg-gray-200 items-center gap-4 p-2 rounded-2xl"
+                        >
+                            {<Rocket className="text-blue-500" size={40} />}NewRule
+                        </span>
+                        is Niural
+                    </p>
+                    <p
+                        className=" md:w-2/3 md:text-xl mt-2 md:mt-4"
+                    >
+                        Niural modernizes an outdated industry by bringing all you need to hire, manage, and pay global workforces in one intelligent, cohesive solution.
+                    </p>
+
+                </div>
+                <div className="flex flex-wrap m-4 md:m-0">
+                    {
+                        benefits.map(item =>
+                            <Card
+                                size={item.size}
+                                heading={item.heading}
+                                info={item.info}
+                                image={item.image}
+                                className="rounded-2xl"
+                            />
+                        )
+                    }
+
+                </div>
             </div>
         </div>
     )
