@@ -5,7 +5,11 @@ import {
     Minus,
     Box,
     Heart,
-    Rocket
+    Rocket,
+    Cpu,
+    GitFork,
+    ListChecks,
+    SendHorizontal
 } from 'lucide-react';
 
 //hero
@@ -48,6 +52,18 @@ import {
     benefit6
 } from "../assets/landing_images/benefits"
 import { Card } from "../components/landing_components";
+
+
+//niural's ai
+import {
+    central,
+    clara,
+    emma,
+    lisa,
+    perry,
+    ray,
+    walt
+} from "../assets/landing_images/niural's_ai"
 
 const Landing: React.FC = () => {
     useEffect(() => {
@@ -157,6 +173,48 @@ const Landing: React.FC = () => {
             size: "big"
         },
     ] as const
+
+
+    //niural's ai
+    const [niuralAi, setNiuralAI] = useState("Clara")
+    const niuralsAi = [
+        {
+            name: "Clara",
+            img: clara,
+            subTitle: "Generation",
+            info: "You’ve added new hires in your system but haven’t created contracts yet. Shall I draft them for you?"
+        },
+        {
+            name: "Emma",
+            img: emma,
+            subTitle: "Assistance",
+            info: "Do you want to know your schedules for today?"
+        },
+        {
+            name: "Lisa",
+            img: lisa,
+            subTitle: "Generation",
+            info: "Did you know there’s a new tax regulation in the UK that could affect your payroll? Would you like me to explain the changes?"
+        },
+        {
+            name: "Perry",
+            img: perry,
+            subTitle: "Suggestions & Q/A",
+            info: "It's December 5th, it's time to run payroll. Do you want me to run it?"
+        },
+        {
+            name: "Ray",
+            img: ray,
+            subTitle: "Analytical",
+            info: "Would you like me to analyze your payroll costs and suggest areas for optimization?"
+        },
+        {
+            name: "Walt",
+            img: walt,
+            subTitle: "Automation",
+            info: "You're manually approving payroll entries. Would you like me to set up an automated workflow to save you time?"
+        },
+    ]
 
     return (
         <div className=" flex flex-col justify-center items-center w-full pt-[200px]">
@@ -314,7 +372,7 @@ const Landing: React.FC = () => {
                     </p>
 
                 </div>
-                <div className="flex flex-wrap m-4 md:m-0">
+                <div className="flex flex-wrap m-4 md:m-0 md:space-y-10">
                     {
                         benefits.map(item =>
                             <Card
@@ -327,6 +385,127 @@ const Landing: React.FC = () => {
                         )
                     }
 
+                </div>
+            </div>
+
+            {/* niural's ai */}
+            <div className="flex flex-col w-full justify-start md:w-[1280px] md:mt-60 my-2">
+                <div className="flex-start flex-col items-start m-2">
+                    <TitleBanner
+                        className="gap-2 shadow rounded"
+                        icon={<Sparkles className="text-purple-900" size={16} />}
+                        iconPosition="left"
+                        children="Niural sAI"
+                    />
+
+                    <p
+                        className="hidden md:flex flex-wrap items-center text-2xl md:text-5xl font-medium gap-4 mt-2 md:mt-4 "
+                    >
+                        Unlock
+                        <span
+                            className="flex bg-gray-200 items-center gap-4 p-2 rounded-2xl"
+                        >
+                            {<Cpu className="text-green-400" size={40} />}Intelligence
+                        </span>,
+                        <span
+                            className="flex bg-gray-200 items-center gap-4 p-2 rounded-2xl"
+                        >
+                            {<GitFork className="text-green-400" size={40} />}Automation
+                        </span>, &
+                        <span
+                            className="flex bg-gray-200 items-center gap-4 p-2 rounded-2xl"
+                        >
+                            {<ListChecks className="text-green-400" size={40} />}Productivity
+                        </span>,
+                        with Niural AI
+                    </p>
+
+                    {/* small device p */}
+                    <p className="md:hidden items-center text-2xl  font-medium gap-4 mt-2">
+                        Unlock Operational Efficiency, Security & Automation with the Niural AI
+                    </p>
+                    <p
+                        className=" md:w-2/3 md:text-xl mt-2 md:mt-4"
+                    >
+                        Niural's AI SuperAgents bring precision and automation to every task.
+                    </p>
+
+                </div>
+
+
+                <div className="flex-start items-center flex-col md:flex-row"  >
+                    <div className="w-full md:w-1/2 flex-start flex-col space-y-4 mx-2">
+                        <div className="flex-start items-start flex-col border border-gray-300 shadow rounded-xl p-2 md:max-w-2/3 min-h-[120px] md:min-h-[140px]">
+                            <div className="flex-center space-x-2">
+                                <img className=" h-8" src={niuralsAi.find(item => item.name === niuralAi)?.img} alt="" />
+                                <p className="text-xl">{niuralAi}</p>
+                                <p>-</p>
+                                <p>{niuralsAi.find(item => item.name === niuralAi)?.subTitle}</p>
+                            </div>
+                            <p className="ml-10">{niuralsAi.find(item => item.name === niuralAi)?.info}</p>
+                        </div>
+
+                        <Button
+                            onClick={() => (window.open("https://app.niural.com/auth/employer/signup", "_blank", "noopener,noreferrer"))}
+                            variant="secondary"
+                            icon={<SendHorizontal className="bg-gray-200" />}
+                            iconPosition="right"
+                            children={`Ask${niuralAi}`}
+                            className="md:w-2/3 rounded-xl border border-gray-300 "
+                        />
+                    </div>
+
+                    {/* roatating imag */}
+                    <div className="w-full md:w-1/2 flex justify-center items-center overflow-hidden">
+                        <div className="relative w-[400px] md:w-[600px] h-[400px] md:h-[600px] rotate-x-[50deg] rotate-z-[45deg] ">
+                            {/* Central image */}
+                            <div
+                                className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat rounded-full "
+                                style={{
+                                    backgroundImage: `url("${central}")`,
+                                }}
+                            />
+
+                            <div
+                                className="absolute inset-0 animate-spins   rounded-full"
+
+                            >
+                                {niuralsAi.map((ai, index) => {
+                                    const angle = (index * 60);
+
+                                    // Define different radii for different screen sizes
+                                    const getResponsiveRadius = () => {
+                                        if (window.innerWidth >= 768) {
+                                            return { container: 300, inner: 150, safe: 200 }; // Desktop
+                                        } else {
+                                            return { container: 200, inner: 100, safe: 140 }; // Mobile
+                                        }
+                                    };
+
+                                    const { safe: safeRadius } = getResponsiveRadius();
+                                    const x = Math.cos(angle * Math.PI / 180) * safeRadius;
+                                    const y = Math.sin(angle * Math.PI / 180) * safeRadius;
+
+                                    return (
+                                        <div
+                                            key={index}
+                                            className="absolute flex items-center gap-1 sm:gap-2 md:gap-4 animate_counter bg-white border border-gray-300 shadow p-1 sm:p-1.5 md:p-2 rounded hover:bg-green-200"
+                                            style={{
+                                                left: `calc(50% + ${x}px - 50px)`,
+                                                top: `calc(50% + ${y}px - 16px)`,
+                                            }}
+                                            onMouseEnter={()=> setNiuralAI(ai.name)}
+                                        >
+                                            <img className="w-4 sm:w-6 md:w-8 flex-shrink-0" src={ai.img} alt="" />
+                                            <p className="font-medium text-xs sm:text-sm md:text-base truncate max-w-[60px] sm:max-w-[80px] md:max-w-none">
+                                                {ai.name}
+                                            </p>
+                                        </div>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

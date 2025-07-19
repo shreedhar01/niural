@@ -2,7 +2,8 @@
 
 .card {
   @apply rounded-2xl w-fit relative overflow-hidden p-[1px];
-  isolation: isolate; /* Creates a stacking context without affecting other elements */
+  isolation: isolate;
+  /* Creates a stacking context without affecting other elements */
 }
 
 .card::before {
@@ -14,30 +15,32 @@
   animation: border-spin 5s linear infinite;
 }
 
-.image_card{
+.image_card {
   @apply relative w-fit
 }
 
-.image_card::before{
+.image_card::before {
   background: conic-gradient(transparent 70%, green);
   inset: -1px;
-  @apply content-[''] absolute bg-green-400  z-[-1] blur-xs rounded-2xl
+  @apply content-[''] absolute bg-green-400 z-[-1] blur-xs rounded-2xl
 }
 
 @keyframes border-spin {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
 }
 
 @keyframes infinite_scroll {
-  0%{
-     transform: translateX(0)
+  0% {
+    transform: translateX(0)
   }
-  100%{
+
+  100% {
     transform: translateX(-100%)
   }
 }
@@ -74,17 +77,67 @@
 
 
 /* loading effect */
-.loading_effect{
-  @apply relative  rounded-full bg-transparent p-2 ;
+.loading_effect {
+  @apply relative rounded-full bg-transparent p-2;
   --loading-width: 10%
 }
 
-.loading_effect::before{
-  @apply absolute content-[""] bg-green-400 z-[-1] rounded-2xl
-  inset-1;
+.loading_effect::before {
+  @apply absolute content-[""] bg-green-400 z-[-1] rounded-2xl inset-1;
   width: var(--loading-width);
 }
 
-.vertical_mask{
-  
+
+@utility flex-center {
+  @apply flex justify-center items-center
+}
+
+@utility flex-start {
+  @apply flex justify-start
+}
+
+@utility flex-end {
+  @apply flex justify-end
+}
+
+
+
+@layer utilities {
+  .flex_center {
+    @apply flex w-full justify-center;
+  }
+
+  .flex_between {
+    @apply flex w-full justify-between;
+  }
+
+  .animate_counter {
+    animation: counter-spin 15s linear infinite;
+  }
+
+  .animate-spins {
+    animation: spin 15s linear infinite;
+  }
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes counter-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(-360deg);
+  }
 }
