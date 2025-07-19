@@ -65,7 +65,7 @@ const Header: React.FC = () => {
 
     return (
         <>
-            <header className="flex flex-col justify-center items-center w-full backdrop-blur-md fixed z-10">
+            <header className="flex flex-col justify-center items-center w-full backdrop-blur-3xl fixed z-10">
                 {/* banner */}
                 <div className="w-full flex items-center justify-center bg-gradient-to-r from-violet-900 to-purple-400">
                     <p className="text-xs md:text-base text-white p-2 flex md:gap-4 gap-2">

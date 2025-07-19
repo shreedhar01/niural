@@ -291,7 +291,7 @@ const Landing: React.FC = () => {
                     onMouseEnter={() => setIsScrollPaused(true)}
                     onMouseLeave={() => setIsScrollPaused(false)}
                 >
-                    <div className={`flex  items-center hover:  gap-25 animate-infinite-scroll ${isScrollPaused ? "animate_paused" : ""}`}>
+                    <div className={`flex  items-center  gap-25 animate-infinite-scroll ${isScrollPaused ? "animate_paused" : ""}`}>
                         {
                             [...trusted_customer_logo, ...trusted_customer_logo, ...trusted_customer_logo].map((item, index) =>
                                 <img key={index} className="h-[40px] flex-shrink-0" src={item} alt="" />)

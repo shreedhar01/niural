@@ -60,7 +60,7 @@
 
 .horizontal-mask::before,
 .horizontal-mask::after {
-  @apply content-[''] absolute top-0 bottom-0 w-[120px] z-10
+  @apply content-[''] absolute top-0 bottom-0 w-[120px] z-1
 }
 
 .horizontal-mask::before {
