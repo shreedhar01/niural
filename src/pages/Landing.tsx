@@ -12,7 +12,6 @@ import {
     SendHorizontal,
     ChevronRight,
     ChevronLeft,
-    Divide
 } from 'lucide-react';
 
 //hero
