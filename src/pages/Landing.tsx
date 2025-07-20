@@ -9,7 +9,10 @@ import {
     Cpu,
     GitFork,
     ListChecks,
-    SendHorizontal
+    SendHorizontal,
+    ChevronRight,
+    ChevronLeft,
+    Divide
 } from 'lucide-react';
 
 //hero
@@ -64,8 +67,12 @@ import {
     ray,
     walt
 } from "../assets/landing_images/niural's_ai"
+import { useNavigate } from "react-router-dom";
+
 
 const Landing: React.FC = () => {
+    const navigate = useNavigate()
+
     useEffect(() => {
         document.title = "Niural - Powering Global HR Management";
     }, []);
@@ -215,6 +222,38 @@ const Landing: React.FC = () => {
             info: "You're manually approving payroll entries. Would you like me to set up an automated workflow to save you time?"
         },
     ]
+
+
+    //testimonials
+    const [startIndex, setStartIndex] = useState(0)
+    const testimonials = [
+        {
+            say: "We decided to use Niural because the team was extremely responsive, and it matched all of our needs in a contracting platform. We were considering other platforms as well (Deel, Remote) but ultimately went with Niural since we felt more confident in (1) their ability to support a crypto workflow and (2) their white glove customer service approach.",
+            name: "Richard Wu",
+            org: "Co-Founder & CTO, Tensor"
+        },
+        {
+            say: "Moving to Niural's payroll system changed everything for us at Nepal Tea Collective. It saved us hours of work every month and made payroll quick and easy. What really stood out was how quickly Niural's team responded whenever we needed help. This has allowed us to focus more on our passion for bringing the finest teas of the world to our audience, knowing that payroll is handled by the experts.",
+            name: "Pratik Rijal",
+            org: "COO, Nepal Tea Collective"
+        },
+        {
+            say: "Niural is not just a vendor to us but has become an extension of our team. Initially, we started with contractor payments, and now we use the full suite of services globally. We have multiple subsidiaries, complex payment needs, and lots of compliance requirements based on our growth. Niural was the only tech company that could handle all of it easily.",
+            name: "David Kuhn",
+            org: "General Counsel, Karate.com"
+        },
+        {
+            say: "Before Niural, our payments and compliance process for fund payments was slow, and managing payments took a very long time. With Niural Pay, we have streamlined both receivables and payables, and are able to handle a lot more clients than we could previously. The Niural Pay product has been a game changer for us.",
+            name: "Kwame Lewis",
+            org: "Co-Founder, LewisLevy Consulting"
+        }
+    ]
+    const testimonial = [
+        (startIndex + testimonials.length - 1) % testimonials.length,
+        startIndex,
+        (startIndex + 1) % testimonials.length
+    ]
+
 
     return (
         <div className=" flex flex-col justify-center items-center w-full pt-[200px]">
@@ -436,7 +475,7 @@ const Landing: React.FC = () => {
                 <div className="flex-start items-center flex-col md:flex-row"  >
                     <div className="w-full md:w-1/2 flex-start flex-col space-y-4 mx-2">
                         <div className="flex-start items-start flex-col border border-gray-300 shadow rounded-xl p-2 md:max-w-2/3 min-h-[120px] md:min-h-[140px]">
-                            <div className="flex-center space-x-2">
+                            <div className="flex-center space-x-2 transition-all duration-300 ease-in-out">
                                 <img className=" h-8" src={niuralsAi.find(item => item.name === niuralAi)?.img} alt="" />
                                 <p className="text-xl">{niuralAi}</p>
                                 <p>-</p>
@@ -494,7 +533,7 @@ const Landing: React.FC = () => {
                                                 left: `calc(50% + ${x}px - 50px)`,
                                                 top: `calc(50% + ${y}px - 16px)`,
                                             }}
-                                            onMouseEnter={()=> setNiuralAI(ai.name)}
+                                            onMouseEnter={() => setNiuralAI(ai.name)}
                                         >
                                             <img className="w-4 sm:w-6 md:w-8 flex-shrink-0" src={ai.img} alt="" />
                                             <p className="font-medium text-xs sm:text-sm md:text-base truncate max-w-[60px] sm:max-w-[80px] md:max-w-none">
@@ -506,6 +545,93 @@ const Landing: React.FC = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            {/* testimonials */}
+            <div className="flex-center flex-col w-full bg-gray-200">
+                <div className="flex-start flex-col w-full md:w-[1280px] md:mt-20 my-2 ">
+                    <div className="flex flex-col items-start  justify-start m-2">
+                        <TitleBanner
+                            className="gap-2 shadow rounded"
+                            icon={
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    viewBox="0 0 256 256"
+                                    className="text-green-500"
+                                >
+                                    <path
+                                        d="M235.32,180l-36.24-36.25L162.62,23.46A21.76,21.76,0,0,0,128,12.93,21.76,21.76,0,0,0,93.38,23.46L56.92,143.76,20.68,180a16,16,0,0,0,0,22.62l32.69,32.69a16,16,0,0,0,22.63,0L124.28,187a40.68,40.68,0,0,0,3.72-4.29,40.68,40.68,0,0,0,3.72,4.29L180,235.32a16,16,0,0,0,22.63,0l32.69-32.69A16,16,0,0,0,235.32,180ZM120,158.75a23.85,23.85,0,0,1-7,17L88.68,200,56,167.32l13.65-13.66a8,8,0,0,0,2-3.34l37-122.22A5.78,5.78,0,0,1,120,29.78Zm47.44,41.38L143,175.72a23.85,23.85,0,0,1-7-17v-129a5.78,5.78,0,0,1,11.31-1.68l37,122.22a8,8,0,0,0,2,3.34l14.49,14.49Z"
+                                    >
+                                    </path>
+                                </svg>
+                            }
+                            iconPosition="left"
+                            children="Testimonials"
+                        />
+
+                        <p
+                            className="flex items-center text-2xl md:text-5xl font-medium gap-4 mt-2 md:mt-4 md:w-2/3"
+                        >
+                            Hear from Those Who Have Made the Switch
+                        </p>
+                        <p
+                            className=" md:w-2/3 md:text-xl mt-2 md:mt-4"
+                        >
+                            Discover the Niural difference - find out why Niural was the right move for them.
+                        </p>
+                        <div className="flex justify-between items-center w-full">
+                            <Button
+                                icon={<ChevronRight size={16} />}
+                                iconPosition="right"
+                                children="View Case Studies"
+                                className="rounded-xl gap-2 mt-2 md:mt-4"
+                                onClick={() => navigate("resources/case_studies")}
+                            />
+
+                            <div className="flex items-center justify-center gap-2 ">
+                                <Button
+                                    variant="secondary"
+                                    icon={<ChevronLeft />}
+                                    iconPosition="left"
+                                    className="rounded-full cursor-pointer"
+                                    onClick={() => setStartIndex(pre => (pre - 1 + testimonials.length) % testimonials.length)}
+                                />
+                                <Button
+                                    variant="secondary"
+                                    icon={<ChevronRight />}
+                                    iconPosition="left"
+                                    className="rounded-full cursor-pointer"
+                                    onClick={() => setStartIndex(pre => (pre + 1) % testimonials.length)}
+                                />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div className="flex justify-between mt-8 gap-8 overflow-hidden px-4 horizontal-mask transition-all duration-300 ease-in-out md:mb-20">
+                    {window.innerWidth > 768 ? testimonial.map((item, index) =>
+                        <div className={`flex flex-col  min-w-3/10 max-w-3/10  border md:min-h-80 border-gray-300 rounded-xl p-4 ${index === 1 ? "bg-white shadow-xl" : "bg-gray-100"}`}>
+                            <p className="font-medium">"{testimonials[item].say}"</p>
+                            <div className="flex justify-between items-center">
+                                <div className="flex flex-col mt-4">
+                                    <p>{testimonials[item].name}</p>
+                                    <p>{testimonials[item].org}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ) : <div className={`flex flex-col    border min-h-80 border-gray-300 rounded-xl p-4 $ bg-white shadow-xl`}>
+                        <p className="font-medium">"{testimonials[startIndex].say}"</p>
+                        <div className="flex justify-between items-center">
+                            <div className="flex flex-col mt-4">
+                                <p>{testimonials[startIndex].name}</p>
+                                <p>{testimonials[startIndex].org}</p>
+                            </div>
+                        </div>
+                    </div>}
                 </div>
             </div>
         </div>
