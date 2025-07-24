@@ -69,6 +69,13 @@ import {
 import { useNavigate } from "react-router-dom";
 
 
+//home_card
+import {
+    home_card,
+    home_card_man
+} from "../assets/landing_images/card"
+
+
 const Landing: React.FC = () => {
     const navigate = useNavigate()
 
@@ -631,6 +638,37 @@ const Landing: React.FC = () => {
                             </div>
                         </div>
                     </div>}
+                </div>
+            </div>
+
+            {/* card */}
+            <div className="flex-center w-full">
+                <div
+                    className="relative flex flex-col md:flex-row  h-[363px] justify-between w-full md:w-[1280px] md:mt-10 my-2  rounded-3xl overflow-hidden"
+                    style={{
+                        backgroundImage: `url("${home_card}")`,
+                        backgroundSize: "cover",
+                        backgroundRepeat: "no-repeat",
+                    }}
+                >
+                    <div className="flex flex-col items-start justify-center text-white mx-4 md:mx-16 mt-4">
+                        <p className="text-2xl md:text-4xl font-medium">Consult with our Experts over Call</p>
+                        <p className="md:text-xl">Book a no-obligations product demo call with our experts.</p>
+                        <div className="mx-4 md:mx-8">
+                            <ul className="my-8 list-disc">
+                                <li>Legal & Compliance Expert</li>
+                                <li>Tax & Payroll Expert</li>
+                                <li>Global HR Expert</li>
+                            </ul>
+                        </div>
+                        <Button
+                            variant="secondary"
+                            className="rounded-xl text-blue-500"
+                            children="Book a Call"
+                            onClick={()=> window.open("https://meetings.hubspot.com/niural/book-a-demo?uuid=54fc3611-46d5-44d7-9ca6-1c49c974db40","_blank", "noopener,noreferrer")}
+                        />
+                    </div>
+                    <img className="absolute bottom-0 right-0 h-[250px] md:h-[300px]" src={home_card_man} alt="" />
                 </div>
             </div>
         </div>
