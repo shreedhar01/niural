@@ -642,7 +642,7 @@ const Landing: React.FC = () => {
             </div>
 
             {/* card */}
-            <div className="flex-center w-full">
+            <div className="flex-center w-full mb-6">
                 <div
                     className="relative flex flex-col md:flex-row  h-[363px] justify-between w-full md:w-[1280px] md:mt-10 my-2  rounded-3xl overflow-hidden"
                     style={{
