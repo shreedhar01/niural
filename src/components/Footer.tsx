@@ -119,7 +119,7 @@ const Footer: React.FC = () => {
 
                 </div>
 
-                <div className="flex flex-col w-full p-4 md:p-0 md:my-20">
+                <div className="flex flex-col md:items-center w-full p-4 md:p-0 md:my-20">
                     <div className="flex flex-col md:flex-row items-start md:items-center md:justify-center md:w-[1280px] gap-y-2 md:gap-x-4">
                         <p className="text-gray-400">© 2025 Niural Inc.</p>
                         <p className="hover:text-green-400 cursor-pointer">Terms of Service</p>
