@@ -62,9 +62,11 @@ const Footer: React.FC = () => {
                                     .find(i => i.section === "Products")
                                     ?.services
                                     .map(i =>
-                                        <li className="hover:text-green-500 cursor-pointer">
-                                            {i}
-                                        </li>
+                                        <Link to={`/niural/products/${i.toLowerCase()}`}>
+                                            <li className="hover:text-green-500 cursor-pointer">
+                                                {i}
+                                            </li>
+                                        </Link>
                                     )}
                             </ul>
                         </div>
@@ -75,9 +77,11 @@ const Footer: React.FC = () => {
                                     .find(i => i.section === "Solutions")
                                     ?.services
                                     .map(i =>
-                                        <li className="hover:text-green-500 cursor-pointer">
-                                            {i}
-                                        </li>
+                                        <Link to={`/niural/solutions/${i.toLowerCase()}`}>
+                                            <li className="hover:text-green-500 cursor-pointer">
+                                                {i}
+                                            </li>
+                                        </Link>
                                     )}
                             </ul>
                         </div>
@@ -88,9 +92,11 @@ const Footer: React.FC = () => {
                                     .find(i => i.section === "Company")
                                     ?.services
                                     .map(i =>
-                                        <li className="hover:text-green-500 cursor-pointer">
-                                            {i}
-                                        </li>
+                                        <Link to={`/niural/company/${i.toLowerCase()}`}>
+                                            <li className="hover:text-green-500 cursor-pointer">
+                                                {i}
+                                            </li>
+                                        </Link>
                                     )}
                             </ul>
                         </div>
@@ -101,9 +107,11 @@ const Footer: React.FC = () => {
                                     .find(i => i.section === "Resources")
                                     ?.services
                                     .map(i =>
-                                        <li className="hover:text-green-500 cursor-pointer">
-                                            {i}
-                                        </li>
+                                        <Link to={`/niural/resources/${i.toLowerCase()}`}>
+                                            <li className="hover:text-green-500 cursor-pointer">
+                                                {i}
+                                            </li>
+                                        </Link>
                                     )}
                             </ul>
                         </div>
