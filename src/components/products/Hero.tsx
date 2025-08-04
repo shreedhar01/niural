@@ -2,9 +2,9 @@ import React from "react";
 import {Button} from "../index"
 
 interface IHero{
-    feature:String,
-    feature_slogon:String,
-    feature_statement:String,
+    feature:string,
+    feature_slogon:string,
+    feature_statement:string,
     img:string
 }
 
