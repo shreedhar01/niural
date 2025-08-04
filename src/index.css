@@ -46,7 +46,7 @@
 }
 
 .animate-infinite-scroll {
-  animation: infinite_scroll 70s linear infinite;
+  animation: infinite_scroll 100s linear infinite;
 }
 
 .animate_paused {

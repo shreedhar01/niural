@@ -149,7 +149,7 @@ const Header: React.FC = () => {
                 >
                     <BelowCard
                         items={servicesLists.find(sec => sec.section === hover)?.services || []}
-                        link={`/niural/${hover.toLowerCase()}`}
+                        link={`${hover.toLowerCase()}`}
                     />
                 </div>
             )}
@@ -235,8 +235,8 @@ const BelowCard: React.FC<IBelowCard> = ({ items, imag, link }) => {
         <div>
             <div>
                 {items.map((item, index) => (
-                    <Link to={`${link}/${item.replaceAll(" ", "_").toLowerCase()}`}>
-                        <p className="flex flex-col m-2 hover:text-green-500 cursor-pointer" key={index}>{item}</p>
+                    <Link to={`/niural/${link}/${item.replaceAll(" ", "_").toLowerCase()}`}>
+                        <p className="flex flex-col m-2 hover:text-green-500 cursor-pointer" key={index}>{link === "products"?"Niural":""} {item}</p>
                     </Link>
                 )
                 )}
