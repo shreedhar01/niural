@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { HeroBanner, InfiniteMove } from "../../components/products";
+import { Features, HeroBanner, InfiniteMove } from "../../components/products";
 import { product1 } from "../../assets/landing_images/products";
+import { Banknote, Coins, HandCoins, Heart, Percent, ReceiptText, Timer } from "lucide-react"
 import {
     aetna,
     chase,
@@ -45,6 +46,44 @@ const Payroll: React.FC = () => {
         visa,
         wells_fargo
     ]
+
+    const features = [
+        {
+            icon: <Heart />,
+            title: "Comprehensive Benefits",
+            description: "Manage health plans, retirement options, and employee perks in a single platform."
+        },
+        {
+            icon: <Coins />,
+            title: "Multiple Payroll Options",
+            description: "Support different payroll methods to match the needs of your team and business - bonus payroll, off-cycle payroll, reporting payroll, and more."
+        },
+        {
+            icon: <Banknote />,
+            title: "Wage Garnishments",
+            description: "Automatically handle wage garnishments, ensuring accurate deductions and compliance."
+        },
+        {
+            icon: <HandCoins />,
+            title: "Workers Compensation",
+            description: "Calculate coverage automatically for your entire team."
+        },
+        {
+            icon: <Percent />,
+            title: "Special Tax Exemptions",
+            description: "Easily manage tax-exempt statuses for eligible employees."
+        },
+        {
+            icon: <Timer />,
+            title: "Timesheet & Time Off",
+            description: "Track and include employee hours and time-off requests into payroll processing."
+        },
+        {
+            icon: <ReceiptText />,
+            title: "Expense & Allowance",
+            description: "Integrate employee expenses and allowances for a smoother payroll experience."
+        }
+    ]
     return (
         <div>
             <HeroBanner
@@ -59,6 +98,10 @@ const Payroll: React.FC = () => {
                 onMouseEnter={() => setAnimate(0)}
                 onMouseLeave={() => setAnimate(1)}
                 styleclass={animate ? "" : "animate_paused"}
+            />
+
+            <Features
+                features={features}
             />
         </div>
     )

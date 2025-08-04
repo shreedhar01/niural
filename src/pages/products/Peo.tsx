@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { HeroBanner, InfiniteMove } from "../../components/products";
+import { Features, HeroBanner, InfiniteMove } from "../../components/products";
 import { product2 } from "../../assets/landing_images/products";
 import {
     aetna,
@@ -19,11 +19,12 @@ import {
     visa,
     wells_fargo
 } from "../../assets/products/payroll"
+import { Atom, Heart, Sparkles, HandFist } from "lucide-react";
 
 const Peo: React.FC = () => {
-    useEffect(()=>{
+    useEffect(() => {
         document.title = "Niural PEO | Niural"
-    },[])
+    }, [])
 
     const [animate, setAnimate] = useState(1);
 
@@ -45,6 +46,29 @@ const Peo: React.FC = () => {
         visa,
         wells_fargo
     ]
+
+    const features = [
+        {
+            icon: <Heart />,
+            title: "The Best Benefits",
+            description: "Customize benefits packages with large group health and benefits plans typically reserved for enterprise. Offer your team competitive healthcare, retirement options, and perks at a fraction of the usual cost."
+        },
+        {
+            icon: <Sparkles />,
+            title: "Automatic Compliance",
+            description: "Niural manages compliance as a joint employer, handling workers’ comp, state registrations, W-2 and 1099 filings, and labor law mandates across jurisdictions."
+        },
+        {
+            icon: <Atom />,
+            title: "Modern Technology",
+            description: "Most PEO runs on software built in the 80s. Niural has ultra-modern rails made with scalability in mind, and enterprise grade infrastructure."
+        },
+        {
+            icon: <HandFist />,
+            title: "All-in-One Platform",
+            description: "Run payroll, international payments, expense management, EOR services, and more in a unified system with easy reporting and audit tools."
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -58,6 +82,9 @@ const Peo: React.FC = () => {
                 onMouseEnter={() => setAnimate(0)}
                 onMouseLeave={() => setAnimate(1)}
                 styleclass={animate ? "" : "animate_paused"}
+            />
+            <Features
+                features={features}
             />
         </div>
     )
