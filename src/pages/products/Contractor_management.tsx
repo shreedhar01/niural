@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Advantages, Features, HeroBanner } from "../../components/products";
+import { Advantages, Features, HearFromClient, HeroBanner } from "../../components/products";
 import { product4 } from "../../assets/landing_images/products";
-import { ArrowUpRight, Columns3Cog, File, HandCoins, Hourglass, ShieldCheck, UserCheck, UserPlus } from "lucide-react";
+import { ArrowUpRight, BriefcaseBusiness, Columns3Cog, File, Globe, HandCoins, Hourglass, Rocket, ShieldCheck, UserCheck, UserPlus } from "lucide-react";
 
 const Contractor_management: React.FC = () => {
     useEffect(() => {
@@ -53,6 +53,32 @@ const Contractor_management: React.FC = () => {
             description:"Choose the contract type that best fits your team’s needs"
         },
     ]
+
+    const hear_from_client = [
+        {
+            dialog: "Niural’s contract flexibility allows us to manage a diverse workforce easily. From freelancers to long-term consultants across different regions, their flexibility ensures we can hire any type of contractor needed for our evolving needs while staying confidently compliant and efficient at every step.",
+            client: "Jennifer Santos, CHRO, Jade Zebra"
+        }
+    ]
+
+    const delivering_reasult = [
+        {
+            icon: <Globe />,
+            topic: "Hire in 150+ Countries:",
+            explain: "Access contractors anywhere using your own entities or Niural’s."
+        },
+        {
+            icon: <BriefcaseBusiness />,
+            topic: "95% of Clients Reduced Legal Fees:",
+            explain: "Create compliant contracts without spending on legal guidance."
+        },
+        {
+            icon: <Rocket />,
+            topic: "Improved Contractor Relationships by 30%:",
+            explain: "Flexible payment and contract capabilities allow you to create the most desired working relationship between your business and contractors."
+        },
+    ]
+
     return (
         <div>
             <HeroBanner
@@ -68,6 +94,11 @@ const Contractor_management: React.FC = () => {
 
             <Advantages
                 key_advantages={key_advantages}
+            />
+
+            <HearFromClient
+                hear_from_client={hear_from_client}
+                delivering_reasult={delivering_reasult}
             />
         </div>
     )

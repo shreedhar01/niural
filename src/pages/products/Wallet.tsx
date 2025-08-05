@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Advantages, Features, HeroBanner } from "../../components/products";
+import { Advantages, Features, HearFromClient, HeroBanner } from "../../components/products";
 import { wallet_img } from "../../assets/products";
-import { Book, HandHelping, Hourglass, Landmark, LibraryBig, Play, User } from "lucide-react";
+import { Book, BriefcaseBusiness, Globe, HandHelping, Hourglass, Landmark, LibraryBig, Play, Rocket, User } from "lucide-react";
 
 const Wallet: React.FC = () => {
     useEffect(() => {
@@ -48,6 +48,31 @@ const Wallet: React.FC = () => {
             description:"Link your general ledger and accounting software for automatic record-keeping"
         },
     ]
+
+    const hear_from_client = [
+        {
+            dialog: "Niural is not just a vendor to us but has become an extension of our team. We have multiple subsidiaries, complex payment needs, and lots of compliance requirements based on our growth. Niural was the only tech company that could handle all of it easily.",
+            client: "David Kuhn, General Counsel, Karate.com"
+        }
+    ]
+
+    const delivering_reasult = [
+        {
+            icon: <Globe />,
+            topic: "100+ Local Currencies Supported:",
+            explain: "Pay anyone in their desired currency."
+        },
+        {
+            icon: <BriefcaseBusiness />,
+            topic: "100% Reduction in Payment Settlement Time:",
+            explain: "Same currency payments occur instantly."
+        },
+        {
+            icon: <Rocket />,
+            topic: "Boosted Workforce Satisfaction by 30%:",
+            explain: "Instant international payments without issue makes for a better relationship with workers."
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -63,6 +88,11 @@ const Wallet: React.FC = () => {
 
             <Advantages
                 key_advantages={key_advantages}
+            />
+
+            <HearFromClient
+                hear_from_client={hear_from_client}
+                delivering_reasult={delivering_reasult}
             />
         </div>
     )

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Advantages, Features, HeroBanner } from "../../components/products";
+import { Advantages, Features, HearFromClient, HeroBanner } from "../../components/products";
 import { hire_contractor_img } from "../../assets/products"
-import { Banknote, DoorOpen, Globe, Handshake, Network, Newspaper, ReceiptText, Signature, Snowflake, Timer } from "lucide-react";
+import { Banknote, BriefcaseBusiness, DoorOpen, Globe, Handshake, Network, Newspaper, ReceiptText, Rocket, Signature, Snowflake, Timer } from "lucide-react";
 
 const Hire_contractor: React.FC = () => {
     useEffect(() => {
@@ -63,6 +63,32 @@ const Hire_contractor: React.FC = () => {
             description:"Manage and pay all your contractors in a single place"
         },
     ]
+
+    const hear_from_client = [
+        {
+            dialog: "Niural is not just a vendor to us but has become an extension of our team. We have multiple subsidiaries, complex payment needs, and lots of compliance requirements based on our growth. Niural was the only tech company that could handle all of it easily.",
+            client: "David Kuhn, General Counsel, Karate.com"
+        }
+    ]
+
+    const delivering_reasult = [
+        {
+            icon: <Globe />,
+            topic: "Hiring Capabilities in 150+ Countries:",
+            explain: "Access contractors around the globe."
+        },
+        {
+            icon: <BriefcaseBusiness />,
+            topic: "95% of Clients Reduced Legal Fees:",
+            explain: "Reliable compliance and contract creation without legal experience."
+        },
+        {
+            icon: <Rocket />,
+            topic: "Improved Contractor Satisfaction by 25%:",
+            explain: "Clear communication and an intuitive platform improve contractor relationships."
+        },
+    ]
+
     return (
         <div>
             <HeroBanner
@@ -78,7 +104,12 @@ const Hire_contractor: React.FC = () => {
 
             <Advantages
                 key_advantages={key_advantages}
-            />           
+            />   
+
+            <HearFromClient
+                hear_from_client={hear_from_client}
+                delivering_reasult={delivering_reasult}
+            />        
         </div>
     )
 }

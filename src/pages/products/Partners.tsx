@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Advantages, Features, HeroBanner } from "../../components/products";
+import { Advantages, Features, HearFromClient, HeroBanner } from "../../components/products";
 import { partners_img } from "../../assets/products";
 import { Banknote, Earth, File, Hourglass, Newspaper, Snowflake, TrendingDown, Users } from "lucide-react";
 
@@ -53,6 +53,13 @@ const Partners: React.FC = () => {
             description:"Bill clients at the advertised rate and receive revenue share"
         },
     ]
+
+    const hear_from_client = [
+        {
+            dialog: "Since we started using the Niural CPA Dashboard, managing our clients has become so much easier. Everything we need is in one place, making our team more efficient, and payroll processing super easy. It's really changed the way we work, giving us more time to focus on what's important - our clients.",
+            client: " Focus Finance"
+        }
+    ]
     return (
         <div>
             <HeroBanner
@@ -68,6 +75,10 @@ const Partners: React.FC = () => {
 
             <Advantages
                 key_advantages={key_advantages}
+            />
+
+            <HearFromClient
+                hear_from_client={hear_from_client}
             />
         </div>
     )

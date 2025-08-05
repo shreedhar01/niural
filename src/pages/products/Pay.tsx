@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Advantages, Features, HeroBanner } from "../../components/products";
+import { Advantages, Features, HearFromClient, HeroBanner } from "../../components/products";
 import { product5 } from "../../assets/landing_images/products";
-import { Fingerprint, Mail, Newspaper, PiggyBank, Radar, TrendingUp, UserPlus } from "lucide-react";
+import { Banknote, ChartColumn, Fingerprint, Mail, Newspaper, PiggyBank, Radar, Timer, TrendingUp, UserPlus } from "lucide-react";
 
 const Pay: React.FC = () => {
     useEffect(() => {
@@ -53,6 +53,31 @@ const Pay: React.FC = () => {
             description:"Automate tasks and integrate with your ERP for clean audits"
         },
     ]
+
+    const hear_from_client = [
+        {
+            dialog: "Before Niural, our invoicing and vendor payments took a very long time. With Niural Pay, we have streamlined both receivables and payables, and can handle a lot more clients than we could previously.",
+            client: "Kwame Lewis, Co-Founder, LewisLevy Consulting"
+        }
+    ]
+
+    const delivering_reasult = [
+        {
+            icon: <Timer />,
+            topic: "Saved 15+ Hours Per Month:",
+            explain: "Automate payment workflows and eliminate manual processing."
+        },
+        {
+            icon: <Banknote />,
+            topic: "Reduced Transaction Costs by 30%:",
+            explain: "Optimize payments with AI-driven routing and cost-efficient payments."
+        },
+        {
+            icon: <ChartColumn />,
+            topic: "Increased Payment Accuracy by 95%:",
+            explain: "Minimize errors with automated compliance and detailed reporting tools."
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -70,6 +95,11 @@ const Pay: React.FC = () => {
 
             <Advantages
                 key_advantages={key_advantages}
+            />
+
+            <HearFromClient
+                hear_from_client={hear_from_client}
+                delivering_reasult={delivering_reasult}
             />
         </div>
     )

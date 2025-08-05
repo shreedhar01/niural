@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Advantages, Features, HeroBanner, InfiniteMove } from "../../components/products";
+import { Advantages, Features, HearFromClient, HeroBanner, InfiniteMove } from "../../components/products";
 import { product2 } from "../../assets/landing_images/products";
 import {
     aetna,
@@ -19,7 +19,7 @@ import {
     visa,
     wells_fargo
 } from "../../assets/products/payroll"
-import { Atom, Heart, Sparkles, HandFist, Hourglass, TrendingUp, Wind } from "lucide-react";
+import { Atom, Heart, Sparkles, HandFist, Hourglass, TrendingUp, Wind, Timer, Rocket, Earth } from "lucide-react";
 
 const Peo: React.FC = () => {
     useEffect(() => {
@@ -87,6 +87,31 @@ const Peo: React.FC = () => {
             description: "Built to scale and allow easy transition on or off PEO"
         },
     ]
+
+    const hear_from_client = [
+        {
+            dialog: "We’ve been using Niural PEO at Cascade, and it’s been a fantastic experience. Onboarding was quick and painless. We also got better healthcare plans for less than we were paying before and no longer have to deal with state tax registrations. Highly recommend.",
+            client: "Ethan Carter, Cascade Enterprises"
+        }
+    ]
+
+    const delivering_reasult = [
+        {
+            icon: <Timer />,
+            topic: "Save 20+ Hours Per Month:",
+            explain: "Automate compliance, benefits, and payroll processes."
+        },
+        {
+            icon: <Rocket />,
+            topic: "Benefits Savings of 40%:",
+            explain: "Access top-tier benefits at a fraction of the price."
+        },
+        {
+            icon: <Earth />,
+            topic: "Operate Globally:",
+            explain: "Offer compliant and consistent benefit packages in different jurisdictions around the world."
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -107,6 +132,11 @@ const Peo: React.FC = () => {
 
             <Advantages
                 key_advantages={key_advantages}
+            />
+
+             <HearFromClient
+                hear_from_client={hear_from_client}
+                delivering_reasult={delivering_reasult}
             />
         </div>
     )

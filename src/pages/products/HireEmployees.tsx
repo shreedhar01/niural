@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Advantages, Features, HeroBanner, InfiniteMove } from "../../components/products";
+import { Advantages, Features, HearFromClient, HeroBanner, InfiniteMove } from "../../components/products";
 import { product3 } from "../../assets/landing_images/products";
 import {
     aetna,
@@ -19,7 +19,7 @@ import {
     visa,
     wells_fargo
 } from "../../assets/products/payroll"
-import { Bot, CreditCard, DoorOpen, Flag, Globe, Network, Timer, TrendingUp, Users } from "lucide-react";
+import { Bot, BriefcaseBusiness, CreditCard, DoorOpen, Flag, Globe, Network, Rocket, Timer, TrendingUp, Users } from "lucide-react";
 
 const HireEmployees: React.FC = () => {
     useEffect(() => {
@@ -97,6 +97,32 @@ const HireEmployees: React.FC = () => {
             description: "Manage your global employees in a single place"
         },
     ]
+
+    const hear_from_client = [
+        {
+            dialog: "We operate in a highly competitive industry where acquiring and retaining top-tier talent is critical. Niural's EOR services have been instrumental, allowing us to easily hire and onboard talent across multiple countries, including the UK, Netherlands, and the US. Their expert visa services and compliance management have saved us countless hours of administrative work, enabling us to focus on growing our business while ensuring support for our team, no matter where they are.",
+            client: "Sarah Brown, Head of People Operations, Mountain Edge Solutions"
+        }
+    ]
+
+    const delivering_reasult = [
+        {
+            icon: <Globe />,
+            topic: "Hiring Capabilities in 150+ Countries:",
+            explain: "Get access to the world without the need for entities."
+        },
+        {
+            icon: <BriefcaseBusiness />,
+            topic: "95% of Clients Reduced Legal Fees:",
+            explain: "Reliable compliance and contract creation without legal experience."
+        },
+        {
+            icon: <Rocket />,
+            topic: "Boosted Employee Satisfaction by 25%:",
+            explain: "Clear communication, accurate and flexible payments, and an intuitive platform improve your workforce's relationship."
+        },
+    ]
+
     return (
         <div>
             <HeroBanner
@@ -117,6 +143,11 @@ const HireEmployees: React.FC = () => {
 
             <Advantages
                 key_advantages={key_advantages}
+            />
+
+            <HearFromClient
+                hear_from_client={hear_from_client}
+                delivering_reasult={delivering_reasult}
             />
         </div>
     )

@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Advantages, Features, HeroBanner, InfiniteMove } from "../../components/products";
+import { Advantages, Features, HearFromClient, HeroBanner, InfiniteMove } from "../../components/products";
 import { product1 } from "../../assets/landing_images/products";
 import {
     Banknote,
     Coins,
+    Earth,
     Globe,
     HandCoins,
     Heart,
     Hourglass,
     Percent,
     ReceiptText,
+    Rocket,
     Timer,
     TrendingDown
 } from "lucide-react"
@@ -113,6 +115,31 @@ const Payroll: React.FC = () => {
             description: "Tackle sophisticated requirements"
         }
     ]
+
+    const hear_from_client = [
+        {
+            dialog: "Moving to Niural Payroll changed everything for us. It saved hours of work every month and made payroll quick and easy.",
+            client: "Nish, Founder, Nepal Tea Collective"
+        }
+    ]
+
+    const delivering_reasult = [
+        {
+            icon: <Timer />,
+            topic: "Save 10+ Hours Per Pay Period:",
+            explain: "Eliminate manual tasks with reliable automation."
+        },
+        {
+            icon: <Rocket />,
+            topic: "90% Fewer Payroll Errors:",
+            explain: "Achieve near-perfect accuracy and on-time payments."
+        },
+        {
+            icon: <Earth />,
+            topic: "Built for Scale:",
+            explain: "Handle multi-jurisdiction compliance and unique employee needs, from visas to special deductions—far beyond what other solutions offer."
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -135,6 +162,11 @@ const Payroll: React.FC = () => {
 
             <Advantages
                 key_advantages={key_advantages}
+            />
+
+            <HearFromClient
+                hear_from_client={hear_from_client}
+                delivering_reasult={delivering_reasult}
             />
         </div>
     )

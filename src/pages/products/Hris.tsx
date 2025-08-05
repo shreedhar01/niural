@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Advantages, Features, HeroBanner } from "../../components/products";
+import { Advantages, Features, HearFromClient, HeroBanner } from "../../components/products";
 import { hris_img } from "../../assets/products";
-import { Check, Gauge, Scale, Settings, Timer, TrendingUp, UserPlus, Volume1 } from "lucide-react";
+import { Check, Gauge, Medal, Rocket, Scale, Settings, Timer, TimerIcon, TrendingUp, UserPlus, Volume1 } from "lucide-react";
 
 const Hris: React.FC = () => {
     useEffect(() => {
@@ -58,6 +58,31 @@ const Hris: React.FC = () => {
             description:"Just a few clicks is all it takes to get started"
         },
     ]
+
+    const hear_from_client = [
+        {
+            dialog: "Niural is not just a vendor to us but has become an extension of our team. We have multiple subsidiaries, complex payment needs, and lots of compliance requirements based on our growth. Niural was the only tech company that could handle all of it easily.",
+            client: "David Kuhn, General Counsel, Karate.com"
+        }
+    ]
+
+    const delivering_reasult = [
+        {
+            icon: <Rocket />,
+            topic: "Boosted Team Productivity by 30%:",
+            explain: "HR insights led to more efficient teams."
+        },
+        {
+            icon: <TimerIcon />,
+            topic: "Reduced Onboarding Time 95%:",
+            explain: "Get started in minutes, not days."
+        },
+        {
+            icon: <Medal />,
+            topic: "Improved Hiring Efficiency by 25%:",
+            explain: "Reduce both the time and the cost of new hires."
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -73,6 +98,11 @@ const Hris: React.FC = () => {
 
             <Advantages
                 key_advantages={key_advantages}
+            />
+
+            <HearFromClient
+                hear_from_client={hear_from_client}
+                delivering_reasult={delivering_reasult}
             />
         </div>
     )
