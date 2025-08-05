@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Features, HeroBanner, InfiniteMove } from "../../components/products";
+import { Advantages, Features, HeroBanner, InfiniteMove } from "../../components/products";
 import { product2 } from "../../assets/landing_images/products";
 import {
     aetna,
@@ -19,7 +19,7 @@ import {
     visa,
     wells_fargo
 } from "../../assets/products/payroll"
-import { Atom, Heart, Sparkles, HandFist } from "lucide-react";
+import { Atom, Heart, Sparkles, HandFist, Hourglass, TrendingUp, Wind } from "lucide-react";
 
 const Peo: React.FC = () => {
     useEffect(() => {
@@ -69,6 +69,24 @@ const Peo: React.FC = () => {
             description: "Run payroll, international payments, expense management, EOR services, and more in a unified system with easy reporting and audit tools."
         },
     ]
+
+    const key_advantages = [
+        {
+            icon:<Hourglass />,
+            title: "Simplify Operations & Save Time",
+            description: "Automate benefits, compliance, and payroll"
+        },
+        {
+            icon:<TrendingUp />,
+            title: "Attract & Retain Top Talent",
+            description: "The best benefits draw the best workers"
+        },
+        {
+            icon:<Wind />,
+            title: "Scale with Confidence",
+            description: "Built to scale and allow easy transition on or off PEO"
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -85,6 +103,10 @@ const Peo: React.FC = () => {
             />
             <Features
                 features={features}
+            />
+
+            <Advantages
+                key_advantages={key_advantages}
             />
         </div>
     )

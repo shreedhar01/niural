@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Features, HeroBanner } from "../../components/products";
+import { Advantages, Features, HeroBanner } from "../../components/products";
 import { product4 } from "../../assets/landing_images/products";
-import { ArrowUpRight, File, HandCoins, Hourglass, UserPlus } from "lucide-react";
+import { ArrowUpRight, Columns3Cog, File, HandCoins, Hourglass, ShieldCheck, UserCheck, UserPlus } from "lucide-react";
 
 const Contractor_management: React.FC = () => {
     useEffect(() => {
@@ -35,6 +35,24 @@ const Contractor_management: React.FC = () => {
             description: "For contractors who are paid a series of lump sums upon completing deliverables."
         },
     ]
+
+    const key_advantages = [
+        {
+            icon:<UserCheck />,
+            title:"Compliant Contract Creation",
+            description:"Fill in a few details about the worker and Niural handles the rest"
+        },
+        {
+            icon:<ShieldCheck />,
+            title:"Niural Armor",
+            description:"Protect your business from misclassification liability and risk"
+        },
+        {
+            icon:<Columns3Cog />,
+            title:"Flexible Operations",
+            description:"Choose the contract type that best fits your team’s needs"
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -46,6 +64,10 @@ const Contractor_management: React.FC = () => {
 
             <Features
                 features={features}
+            />
+
+            <Advantages
+                key_advantages={key_advantages}
             />
         </div>
     )

@@ -68,7 +68,7 @@ const Header: React.FC = () => {
             <header className="flex flex-col justify-center items-center w-full backdrop-blur-3xl fixed z-10">
                 {/* banner */}
                 <div className="w-full flex items-center justify-center bg-gradient-to-r from-violet-900 to-purple-400">
-                    <p className="text-xs md:text-base text-white p-2 flex md:gap-4 gap-2">
+                    <p className="text-sm md:text-xs text-white p-2 flex md:gap-4 gap-2">
                         <span>Niural raises $31M to Transform Global CFO and People Operations</span>
                         <Link to="/niural/announcement/we-are-getting-bigger">
                             <span className=" hover:underline flex justify-center items-center md:gap-2">

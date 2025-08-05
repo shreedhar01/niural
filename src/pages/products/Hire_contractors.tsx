@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Features, HeroBanner } from "../../components/products";
+import { Advantages, Features, HeroBanner } from "../../components/products";
 import { hire_contractor_img } from "../../assets/products"
-import { Banknote, Handshake, Network, Newspaper, ReceiptText, Signature, Timer } from "lucide-react";
+import { Banknote, DoorOpen, Globe, Handshake, Network, Newspaper, ReceiptText, Signature, Snowflake, Timer } from "lucide-react";
 
 const Hire_contractor: React.FC = () => {
     useEffect(() => {
@@ -45,6 +45,24 @@ const Hire_contractor: React.FC = () => {
             description: "Hire contractors with your entities or ours. Create and sign locally compliant contracts, and Data Processing Agreements to stay compliant with GDPR."
         },
     ]
+
+    const key_advantages = [
+        {
+            icon:<Globe />,
+            title:"Hire Worldwide",
+            description:"Hire top global talent with or without local entities"
+        },
+        {
+            icon:<Snowflake />,
+            title:"Risk Protection",
+            description:"AOR provides liability safeguards for your protection"
+        },
+        {
+            icon:<DoorOpen/>,
+            title:"Efficient Operations",
+            description:"Manage and pay all your contractors in a single place"
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -57,6 +75,10 @@ const Hire_contractor: React.FC = () => {
             <Features
                 features={features}
             />
+
+            <Advantages
+                key_advantages={key_advantages}
+            />           
         </div>
     )
 }

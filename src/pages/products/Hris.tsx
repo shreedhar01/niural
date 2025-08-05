@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Features, HeroBanner } from "../../components/products";
+import { Advantages, Features, HeroBanner } from "../../components/products";
 import { hris_img } from "../../assets/products";
-import { Check, Gauge, Settings, Timer, UserPlus, Volume1 } from "lucide-react";
+import { Check, Gauge, Scale, Settings, Timer, TrendingUp, UserPlus, Volume1 } from "lucide-react";
 
 const Hris: React.FC = () => {
     useEffect(() => {
@@ -40,6 +40,24 @@ const Hris: React.FC = () => {
             description: "Get the most out of your workforce with a suite of HR analytical tools."
         }
     ]
+
+    const key_advantages = [
+        {
+            icon:<Check />,
+            title:"Consolidated Workforce Management",
+            description:"Unified platform for HR and payment needs"
+        },
+        {
+            icon:<TrendingUp />,
+            title:"Free of Charge",
+            description:"Existing users access Niural HRIS at no cost"
+        },
+        {
+            icon:<Scale />,
+            title:"1-Minute Onboarding",
+            description:"Just a few clicks is all it takes to get started"
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -51,6 +69,10 @@ const Hris: React.FC = () => {
 
             <Features
                 features={features}
+            />
+
+            <Advantages
+                key_advantages={key_advantages}
             />
         </div>
     )

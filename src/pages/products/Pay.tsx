@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Features, HeroBanner } from "../../components/products";
+import { Advantages, Features, HeroBanner } from "../../components/products";
 import { product5 } from "../../assets/landing_images/products";
-import { Fingerprint, Mail, Newspaper, UserPlus } from "lucide-react";
+import { Fingerprint, Mail, Newspaper, PiggyBank, Radar, TrendingUp, UserPlus } from "lucide-react";
 
 const Pay: React.FC = () => {
     useEffect(() => {
@@ -35,6 +35,24 @@ const Pay: React.FC = () => {
             description: "Create thousands of vendors, customers, or invoices from existing lists with just a few clicks."
         },
     ]
+
+    const key_advantages = [
+        {
+            icon:<PiggyBank />,
+            title:"All Payments in One Place",
+            description:"Handle revenue coming in and expenses going out with granularity"
+        },
+        {
+            icon:<TrendingUp />,
+            title:"More Control with More Choices",
+            description:"Tailor invoices, customize approval flows, and conduct payments in 100+ currencies"
+        },
+        {
+            icon:<Radar />,
+            title:"Automate Complex Processes",
+            description:"Automate tasks and integrate with your ERP for clean audits"
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -48,6 +66,10 @@ const Pay: React.FC = () => {
 
             <Features
                 features={features}
+            />
+
+            <Advantages
+                key_advantages={key_advantages}
             />
         </div>
     )

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Features, HeroBanner } from "../../components/products";
+import { Advantages, Features, HeroBanner } from "../../components/products";
 import { wallet_img } from "../../assets/products";
-import { Book, Landmark, Play, User } from "lucide-react";
+import { Book, HandHelping, Hourglass, Landmark, LibraryBig, Play, User } from "lucide-react";
 
 const Wallet: React.FC = () => {
     useEffect(() => {
@@ -30,6 +30,24 @@ const Wallet: React.FC = () => {
             description: "Seamlessly integrates with your existing general ledger and accounting software, no manual entry is needed."
         },
     ]
+
+    const key_advantages = [
+        {
+            icon:<Hourglass />,
+            title:"Instant Payments",
+            description:"Settle payments to employees, contractors, and vendors instantly"
+        },
+        {
+            icon:< HandHelping/>,
+            title:"Accounts Receivable",
+            description:"Receive money from your customers directly to your wallet"
+        },
+        {
+            icon:<LibraryBig />,
+            title:"Audit-Ready Records",
+            description:"Link your general ledger and accounting software for automatic record-keeping"
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -41,6 +59,10 @@ const Wallet: React.FC = () => {
 
             <Features
                 features={features}
+            />
+
+            <Advantages
+                key_advantages={key_advantages}
             />
         </div>
     )

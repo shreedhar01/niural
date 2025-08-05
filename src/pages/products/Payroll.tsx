@@ -1,7 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { Features, HeroBanner, InfiniteMove } from "../../components/products";
+import { Advantages, Features, HeroBanner, InfiniteMove } from "../../components/products";
 import { product1 } from "../../assets/landing_images/products";
-import { Banknote, Coins, HandCoins, Heart, Percent, ReceiptText, Timer } from "lucide-react"
+import {
+    Banknote,
+    Coins,
+    Globe,
+    HandCoins,
+    Heart,
+    Hourglass,
+    Percent,
+    ReceiptText,
+    Timer,
+    TrendingDown
+} from "lucide-react"
 import {
     aetna,
     chase,
@@ -84,6 +95,24 @@ const Payroll: React.FC = () => {
             description: "Integrate employee expenses and allowances for a smoother payroll experience."
         }
     ]
+
+    const key_advantages = [
+        {
+            icon: <Hourglass />,
+            title: "Save Time",
+            description: "Automate payroll processing"
+        },
+        {
+            icon: <TrendingDown />,
+            title: "Reduce Errors",
+            description: "Eliminate manual tax mistakes"
+        },
+        {
+            icon: <Globe />,
+            title: "Handle Complexity",
+            description: "Tackle sophisticated requirements"
+        }
+    ]
     return (
         <div>
             <HeroBanner
@@ -102,6 +131,10 @@ const Payroll: React.FC = () => {
 
             <Features
                 features={features}
+            />
+
+            <Advantages
+                key_advantages={key_advantages}
             />
         </div>
     )

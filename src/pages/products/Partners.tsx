@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Features, HeroBanner } from "../../components/products";
+import { Advantages, Features, HeroBanner } from "../../components/products";
 import { partners_img } from "../../assets/products";
-import { Banknote, File, Newspaper, Snowflake, Users } from "lucide-react";
+import { Banknote, Earth, File, Hourglass, Newspaper, Snowflake, TrendingDown, Users } from "lucide-react";
 
 const Partners: React.FC = () => {
     useEffect(() => {
@@ -35,6 +35,24 @@ const Partners: React.FC = () => {
             description: "Advanced integrations with all the leading accounting software."
         },
     ]
+
+    const key_advantages = [
+        {
+            icon:<Hourglass />,
+            title:"Discounts for Clients",
+            description:"Offer your clients a discounted billing rate"
+        },
+        {
+            icon:<TrendingDown />,
+            title:"Discounts for Partners",
+            description:"Partners get a discounted rate"
+        },
+        {
+            icon:<Earth />,
+            title:"Revenue Sharing",
+            description:"Bill clients at the advertised rate and receive revenue share"
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -46,6 +64,10 @@ const Partners: React.FC = () => {
 
             <Features
                 features={features}
+            />
+
+            <Advantages
+                key_advantages={key_advantages}
             />
         </div>
     )
