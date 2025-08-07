@@ -17,7 +17,7 @@ const AiDrivenExcellence:React.FC<IAiDrivenExcellence> = ({ai_driven_excellence}
     },[])
     return (
         <div className="flex justify-center items-center w-full py-32 px-2 md:px-0">
-                <div className="flex flex-col items-center justify-center gap-y-8 md:w-[1280px] bg-gray-100 rounded-xl p-8">
+                <div className="flex flex-col items-center justify-center gap-y-8 w-full md:w-[1280px] bg-gray-100 rounded-xl p-8">
                     <p className="text-xl">AI-Driven Excellence</p>
                     <div className="w-full">
                         <div className="flex flex-col md:flex-row justify-between  w-full">
@@ -33,7 +33,7 @@ const AiDrivenExcellence:React.FC<IAiDrivenExcellence> = ({ai_driven_excellence}
                             }
                         </div>
                         <div className="flex items-center justify-center w-full ">
-                            <div className={`${ wind ? "corner-accents all_corners" : ""} flex items-center justify-center w-full md:w-10/100 bg-white p-4 gap-x-4 outline-1 outline-dashed outline-gray-300`}>
+                            <div className={`corner-accents all_corners flex items-center justify-center w-full md:w-10/100 bg-white p-4 gap-x-4 outline-1 outline-dashed outline-gray-300`}>
                                 <div className="text-purple-600 bg-gray-100 rounded-xl p-4">
                                     <Flower />
                                 </div>
