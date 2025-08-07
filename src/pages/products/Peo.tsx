@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Advantages, Features, HearFromClient, HeroBanner, InfiniteMove } from "../../components/products";
+import { Advantages, AiDrivenExcellence, Features, HearFromClient, HeroBanner, InfiniteMove } from "../../components/products";
 import { product2 } from "../../assets/landing_images/products";
 import {
     aetna,
@@ -19,7 +19,7 @@ import {
     visa,
     wells_fargo
 } from "../../assets/products/payroll"
-import { Atom, Heart, Sparkles, HandFist, Hourglass, TrendingUp, Wind, Timer, Rocket, Earth } from "lucide-react";
+import { Atom, Heart, Sparkles, HandFist, Hourglass, TrendingUp, Wind, Timer, Rocket, Earth, Wrench, Unplug, Headset } from "lucide-react";
 
 const Peo: React.FC = () => {
     useEffect(() => {
@@ -112,6 +112,26 @@ const Peo: React.FC = () => {
             explain: "Offer compliant and consistent benefit packages in different jurisdictions around the world."
         },
     ]
+
+    const ai_driven_excellence = [
+        {
+            icon: <Sparkles />,
+            slogon: "AI-Driven Compliance Solutions"
+        },
+        {
+            icon: <Wrench/>,
+            slogon: "Detailed Reporting & Audit Tools"
+        },
+        {
+            icon: < Unplug/>,
+            slogon: "Payroll & Benefits Integrations"
+        },
+        {
+            icon: <Headset />,
+            slogon: "Risk Mitigation & Dedicated Support"
+        },
+    ]
+
     return (
         <div>
             <HeroBanner
@@ -137,6 +157,10 @@ const Peo: React.FC = () => {
              <HearFromClient
                 hear_from_client={hear_from_client}
                 delivering_reasult={delivering_reasult}
+            />
+
+            <AiDrivenExcellence
+                ai_driven_excellence={ai_driven_excellence}
             />
         </div>
     )

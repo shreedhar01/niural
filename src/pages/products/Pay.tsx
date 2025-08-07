@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Advantages, Features, HearFromClient, HeroBanner } from "../../components/products";
+import { Advantages, AiDrivenExcellence, Features, HearFromClient, HeroBanner } from "../../components/products";
 import { product5 } from "../../assets/landing_images/products";
-import { Banknote, ChartColumn, Fingerprint, Mail, Newspaper, PiggyBank, Radar, Timer, TrendingUp, UserPlus } from "lucide-react";
+import { Banknote, Briefcase, Bug, ChartColumn, Fingerprint, Mail, Newspaper, PiggyBank, Play, Radar, Sparkle, Timer, TrendingDown, TrendingUp, UserPlus } from "lucide-react";
 
 const Pay: React.FC = () => {
     useEffect(() => {
@@ -78,6 +78,29 @@ const Pay: React.FC = () => {
             explain: "Minimize errors with automated compliance and detailed reporting tools."
         },
     ]
+
+    const ai_driven_excellence = [
+        {
+            icon: <Play />,
+            slogon: "Faster Payment Processing with AI-driven Workflows."
+        },
+        {
+            icon: <TrendingDown />,
+            slogon: "Reduction in Late Fees Through Optimized Payment Scheduling."
+        },
+        {
+            icon: <Sparkle />,
+            slogon: "Improvement in Cash Flow Predictability with AI-powered Forecasting."
+        },
+        {
+            icon: <Bug />,
+            slogon: "Faster Error Detection in AR/AP Transactions Using Intelligent Automation."
+        },
+        {
+            icon: <Briefcase />,
+            slogon: "Cost Savings on Administrative Overhead Through AI-Driven Process Optimization."
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -100,6 +123,10 @@ const Pay: React.FC = () => {
             <HearFromClient
                 hear_from_client={hear_from_client}
                 delivering_reasult={delivering_reasult}
+            />
+
+            <AiDrivenExcellence
+                ai_driven_excellence={ai_driven_excellence}
             />
         </div>
     )

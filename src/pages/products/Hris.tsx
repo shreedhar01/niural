@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Advantages, Features, HearFromClient, HeroBanner } from "../../components/products";
+import { Advantages, AiDrivenExcellence, Features, HearFromClient, HeroBanner } from "../../components/products";
 import { hris_img } from "../../assets/products";
-import { Check, Gauge, Medal, Rocket, Scale, Settings, Timer, TimerIcon, TrendingUp, UserPlus, Volume1 } from "lucide-react";
+import { Check, Gauge, Hourglass, Medal, Monitor, ReceiptText, Rocket, Scale, Settings, Sparkle, Timer, TimerIcon, TrendingUp, UserPlus, Volume1 } from "lucide-react";
 
 const Hris: React.FC = () => {
     useEffect(() => {
@@ -83,6 +83,25 @@ const Hris: React.FC = () => {
             explain: "Reduce both the time and the cost of new hires."
         },
     ]
+
+    const ai_driven_excellence = [
+        {
+            icon: <Monitor />,
+            slogon: "AI Workers that Automate Payroll & Hiring"
+        },
+        {
+            icon: <Hourglass />,
+            slogon: "Predictive Analytics for Hiring & Performance"
+        },
+        {
+            icon: <Sparkle />,
+            slogon: "Document Creation & Workflow Automation"
+        },
+        {
+            icon: <ReceiptText />,
+            slogon: "Continuous Labor Law Compliance"
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -103,6 +122,10 @@ const Hris: React.FC = () => {
             <HearFromClient
                 hear_from_client={hear_from_client}
                 delivering_reasult={delivering_reasult}
+            />
+
+            <AiDrivenExcellence
+                ai_driven_excellence={ai_driven_excellence}
             />
         </div>
     )

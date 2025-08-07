@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Advantages, Features, HearFromClient, HeroBanner } from "../../components/products";
+import { Advantages, AiDrivenExcellence, Features, HearFromClient, HeroBanner } from "../../components/products";
 import { partners_img } from "../../assets/products";
-import { Banknote, Earth, File, Hourglass, Newspaper, Snowflake, TrendingDown, Users } from "lucide-react";
+import { Banknote, Bug, Earth, File, Hourglass, Monitor, Newspaper, Snowflake, Sparkle, TrendingDown, Unplug, Users } from "lucide-react";
 
 const Partners: React.FC = () => {
     useEffect(() => {
@@ -60,6 +60,25 @@ const Partners: React.FC = () => {
             client: " Focus Finance"
         }
     ]
+
+    const ai_driven_excellence = [
+        {
+            icon: <Monitor />,
+            slogon: "Granular & Transparent Reporting"
+        },
+        {
+            icon: <Sparkle />,
+            slogon: "Fast & Easy Payroll Automation"
+        },
+        {
+            icon: <Bug />,
+            slogon: "Bulk Upload + Error Detection"
+        },
+        {
+            icon: <Unplug />,
+            slogon: "Integrate with Existing Systems"
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -79,6 +98,10 @@ const Partners: React.FC = () => {
 
             <HearFromClient
                 hear_from_client={hear_from_client}
+            />
+
+            <AiDrivenExcellence
+                ai_driven_excellence={ai_driven_excellence}
             />
         </div>
     )

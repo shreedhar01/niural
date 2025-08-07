@@ -141,3 +141,52 @@
     transform: rotate(-360deg);
   }
 }
+
+.corner-accents {
+  position: relative;
+}
+
+.corner-accents::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  pointer-events: none;
+  background-repeat: no-repeat;
+}
+
+/* two layers per corner */
+.corner-accents.top_left::after {
+  background:
+    linear-gradient(currentColor, currentColor) top left / 20px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) top left / 2px 20px no-repeat;
+}
+
+.corner-accents.top_right::after {
+  background:
+    linear-gradient(currentColor, currentColor) top right / 20px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) top right / 2px 20px no-repeat;
+}
+
+.corner-accents.bottom_left::after {
+  background:
+    linear-gradient(currentColor, currentColor) bottom left / 20px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) bottom left / 2px 20px no-repeat;
+}
+
+.corner-accents.bottom_right::after {
+  background:
+    linear-gradient(currentColor, currentColor) bottom right / 20px 2px no-repeat,
+    linear-gradient(currentColor, currentColor) bottom right / 2px 20px no-repeat;
+}
+
+.corner-accents.all_corners::after {
+  background:
+    /* top-left */     linear-gradient(currentColor,currentColor) top left     / 20px 2px no-repeat,
+                       linear-gradient(currentColor,currentColor) top left     / 2px 20px no-repeat,
+    /* top-right */    linear-gradient(currentColor,currentColor) top right    / 20px 2px no-repeat,
+                       linear-gradient(currentColor,currentColor) top right    / 2px 20px no-repeat,
+    /* bottom-right */ linear-gradient(currentColor,currentColor) bottom right / 20px 2px no-repeat,
+                       linear-gradient(currentColor,currentColor) bottom right / 2px 20px no-repeat,
+    /* bottom-left */  linear-gradient(currentColor,currentColor) bottom left  / 20px 2px no-repeat,
+                       linear-gradient(currentColor,currentColor) bottom left  / 2px 20px no-repeat;
+}

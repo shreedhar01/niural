@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Advantages, Features, HearFromClient, HeroBanner, InfiniteMove } from "../../components/products";
+import {
+    Advantages,
+    AiDrivenExcellence,
+    Features,
+    HearFromClient,
+    HeroBanner,
+    InfiniteMove
+} from "../../components/products";
 import { product1 } from "../../assets/landing_images/products";
 import {
     Banknote,
@@ -9,9 +16,13 @@ import {
     HandCoins,
     Heart,
     Hourglass,
+    HourglassIcon,
+    Monitor,
     Percent,
     ReceiptText,
     Rocket,
+    Sparkles,
+    SquareUser,
     Timer,
     TrendingDown
 } from "lucide-react"
@@ -140,6 +151,25 @@ const Payroll: React.FC = () => {
             explain: "Handle multi-jurisdiction compliance and unique employee needs, from visas to special deductions—far beyond what other solutions offer."
         },
     ]
+
+    const ai_driven_excellence = [
+        {
+            icon: <Monitor />,
+            slogon: "AI Driven Compliance Monitoring"
+        },
+        {
+            icon: <HourglassIcon />,
+            slogon: "Predictive Payroll Analytics"
+        },
+        {
+            icon: <Sparkles />,
+            slogon: "Smart Payroll Automation"
+        },
+        {
+            icon: <SquareUser />,
+            slogon: "Automated Fraud Detection"
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -167,6 +197,10 @@ const Payroll: React.FC = () => {
             <HearFromClient
                 hear_from_client={hear_from_client}
                 delivering_reasult={delivering_reasult}
+            />
+
+            <AiDrivenExcellence
+                ai_driven_excellence={ai_driven_excellence}
             />
         </div>
     )

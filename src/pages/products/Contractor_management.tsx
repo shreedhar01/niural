@@ -1,7 +1,22 @@
 import React, { useEffect } from "react";
-import { Advantages, Features, HearFromClient, HeroBanner } from "../../components/products";
+import { Advantages, AiDrivenExcellence, Features, HearFromClient, HeroBanner } from "../../components/products";
 import { product4 } from "../../assets/landing_images/products";
-import { ArrowUpRight, BriefcaseBusiness, Columns3Cog, File, Globe, HandCoins, Hourglass, Rocket, ShieldCheck, UserCheck, UserPlus } from "lucide-react";
+import {
+    ArrowUpRight,
+    Banknote,
+    BriefcaseBusiness,
+    ChartLine,
+    Columns3Cog,
+    File,
+    Globe, HandCoins,
+    Hourglass,
+    Rocket,
+    RocketIcon,
+    ShieldCheck,
+    UserCheck,
+    UserPlus,
+    Zap
+} from "lucide-react";
 
 const Contractor_management: React.FC = () => {
     useEffect(() => {
@@ -38,19 +53,19 @@ const Contractor_management: React.FC = () => {
 
     const key_advantages = [
         {
-            icon:<UserCheck />,
-            title:"Compliant Contract Creation",
-            description:"Fill in a few details about the worker and Niural handles the rest"
+            icon: <UserCheck />,
+            title: "Compliant Contract Creation",
+            description: "Fill in a few details about the worker and Niural handles the rest"
         },
         {
-            icon:<ShieldCheck />,
-            title:"Niural Armor",
-            description:"Protect your business from misclassification liability and risk"
+            icon: <ShieldCheck />,
+            title: "Niural Armor",
+            description: "Protect your business from misclassification liability and risk"
         },
         {
-            icon:<Columns3Cog />,
-            title:"Flexible Operations",
-            description:"Choose the contract type that best fits your team’s needs"
+            icon: <Columns3Cog />,
+            title: "Flexible Operations",
+            description: "Choose the contract type that best fits your team’s needs"
         },
     ]
 
@@ -79,6 +94,25 @@ const Contractor_management: React.FC = () => {
         },
     ]
 
+    const ai_driven_excellence = [
+        {
+            icon: <ChartLine />,
+            slogon: "Maintain Clean Audit Trails"
+        },
+        {
+            icon: <RocketIcon />,
+            slogon: "Bulk Upload for Mass Hiring"
+        },
+        {
+            icon: <Zap />,
+            slogon: "Compliant Contract Creation"
+        },
+        {
+            icon: <Banknote />,
+            slogon: "Easy, Accurate Payments"
+        },
+    ]
+
     return (
         <div>
             <HeroBanner
@@ -99,6 +133,10 @@ const Contractor_management: React.FC = () => {
             <HearFromClient
                 hear_from_client={hear_from_client}
                 delivering_reasult={delivering_reasult}
+            />
+
+            <AiDrivenExcellence
+                ai_driven_excellence={ai_driven_excellence}
             />
         </div>
     )

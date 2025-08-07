@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Advantages, Features, HearFromClient, HeroBanner } from "../../components/products";
+import { Advantages, AiDrivenExcellence, Features, HearFromClient, HeroBanner } from "../../components/products";
 import { hire_contractor_img } from "../../assets/products"
-import { Banknote, BriefcaseBusiness, DoorOpen, Globe, Handshake, Network, Newspaper, ReceiptText, Rocket, Signature, Snowflake, Timer } from "lucide-react";
+import { Banknote, BriefcaseBusiness, DoorOpen, Earth, Globe, HandFist, Handshake, Network, Newspaper, ReceiptText, Rocket, Signature, Snowflake, Timer, Upload, UserCheck } from "lucide-react";
 
 const Hire_contractor: React.FC = () => {
     useEffect(() => {
@@ -89,6 +89,25 @@ const Hire_contractor: React.FC = () => {
         },
     ]
 
+    const ai_driven_excellence = [
+        {
+            icon: <Earth />,
+            slogon: "Global Compliance Safeguards"
+        },
+        {
+            icon: <UserCheck />,
+            slogon: "Contract Creation and Onboarding"
+        },
+        {
+            icon: <Upload/>,
+            slogon: "Bulk Upload + Error Detection"
+        },
+        {
+            icon: <HandFist />,
+            slogon: "Worker Misclassification Protection"
+        },
+    ]
+
     return (
         <div>
             <HeroBanner
@@ -109,7 +128,11 @@ const Hire_contractor: React.FC = () => {
             <HearFromClient
                 hear_from_client={hear_from_client}
                 delivering_reasult={delivering_reasult}
-            />        
+            />    
+
+            <AiDrivenExcellence
+                ai_driven_excellence={ai_driven_excellence}
+            />    
         </div>
     )
 }

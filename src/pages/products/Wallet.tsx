@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { Advantages, Features, HearFromClient, HeroBanner } from "../../components/products";
+import { Advantages, AiDrivenExcellence, Features, HearFromClient, HeroBanner } from "../../components/products";
 import { wallet_img } from "../../assets/products";
-import { Book, BriefcaseBusiness, Globe, HandHelping, Hourglass, Landmark, LibraryBig, Play, Rocket, User } from "lucide-react";
+import { Book, BriefcaseBusiness, Coins, Globe, Globe2, HandHelping, Hourglass, Landmark, LibraryBig, Play, Rocket, Sparkle, User } from "lucide-react";
 
 const Wallet: React.FC = () => {
     useEffect(() => {
@@ -73,6 +73,21 @@ const Wallet: React.FC = () => {
             explain: "Instant international payments without issue makes for a better relationship with workers."
         },
     ]
+
+    const ai_driven_excellence = [
+        {
+            icon: <Globe2 />,
+            slogon: "Globally Compliant Payments"
+        },
+        {
+            icon: < Sparkle/>,
+            slogon: "Instant Payments"
+        },
+        {
+            icon: <Coins />,
+            slogon: "Multiple Payments at Once"
+        },
+    ]
     return (
         <div>
             <HeroBanner
@@ -93,6 +108,10 @@ const Wallet: React.FC = () => {
             <HearFromClient
                 hear_from_client={hear_from_client}
                 delivering_reasult={delivering_reasult}
+            />
+
+            <AiDrivenExcellence
+                ai_driven_excellence={ai_driven_excellence}
             />
         </div>
     )
