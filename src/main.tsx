@@ -32,9 +32,7 @@ import {
   AiRiskAnalyzer,
   Blogs,
   CaseStudies,
-  Glossary,
-  KnowledgeBase,
-  NiuralDocumentation
+  Glossary
 } from "./pages/resources"
 
 import {
@@ -72,8 +70,6 @@ createRoot(document.getElementById('root')!).render(
             <Route path='blogs' element={<Blogs />} />
             <Route path='case_studies' element={<CaseStudies />} />
             <Route path='glossary' element={<Glossary />} />
-            <Route path='knowledge_base' element={<KnowledgeBase />} />
-            <Route path='niural_documentation' element={<NiuralDocumentation />} />
           </Route>
           <Route path='solutions'>
             <Route path='hr' element={<HR />} />

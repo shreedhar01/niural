@@ -23,7 +23,7 @@ const Header: React.FC = () => {
     const handleMouseLeave = () => {
         const timeout = setTimeout(() => {
             setHover("");
-        }, 200); 
+        }, 200);
         setHoverTimeout(timeout);
     };
 
@@ -144,8 +144,8 @@ const Header: React.FC = () => {
                         left: dropdownPosition.x,
                         top: dropdownPosition.y
                     }}
-                    onMouseEnter={()=>handleDropdownMouseEnter(hover)}
-                    onMouseLeave={()=>setHover("")}
+                    onMouseEnter={() => handleDropdownMouseEnter(hover)}
+                    onMouseLeave={() => setHover("")}
                 >
                     <BelowCard
                         items={servicesLists.find(sec => sec.section === hover)?.services || []}
@@ -195,7 +195,16 @@ const Header: React.FC = () => {
                                     children={item}
                                     variant="secondary"
                                     size="mid"
-                                    onClick={() => navigate(`/niural/${which.toLowerCase()}/${item.toLowerCase().replaceAll(" ", "_")}`)}
+                                    onClick={() => {
+                                        const whic = which.toLowerCase() + "/" + item.toLowerCase().replaceAll(" ", "_")
+                                        if (whic === "resources/knowledge_base") {
+                                            window.open("https://help.niural.com/hc/en-us", "_", "noopener,noreferrer")
+                                        } else if (whic === "resources/niural_documentation") {
+                                            window.open("https://docs.niural.com/docs/niural-openapi-guide", "_", "noopener,noreferrer")
+                                        } else {
+                                            navigate(`/niural/${whic}`)
+                                        }
+                                    }}
                                 />
                             ))
                         }
@@ -231,12 +240,28 @@ interface IBelowCard {
 }
 
 const BelowCard: React.FC<IBelowCard> = ({ items, imag, link }) => {
+    const navigate = useNavigate()
     return (
         <div>
             <div>
                 {items.map((item, index) => (
                     <Link to={`/niural/${link}/${item.replaceAll(" ", "_").toLowerCase()}`}>
-                        <p className="flex flex-col m-2 hover:text-green-500 cursor-pointer" key={index}>{link === "products"?"Niural":""} {item}</p>
+                        <p
+                            className="flex flex-col m-2 hover:text-green-500 cursor-pointer"
+                            key={index}
+                            onClick={() => {
+                                const whic = link.toLowerCase() + "/" + item.toLowerCase().replaceAll(" ", "_")
+                                if (whic === "resources/knowledge_base") {
+                                    window.open("https://help.niural.com/hc/en-us", "_", "noopener,noreferrer")
+                                } else if (whic === "resources/niural_documentation") {
+                                    window.open("https://docs.niural.com/docs/niural-openapi-guide", "_", "noopener,noreferrer")
+                                } else {
+                                    navigate(`/niural/${whic}`)
+                                }
+                            }}
+                        >
+                            {link === "products" ? "Niural" : ""} {item}
+                        </p>
                     </Link>
                 )
                 )}
