@@ -1,5 +1,9 @@
 import HeroThing from "./HeroThing";
+import ProblemImpact from "./ProblemImpact";
+import OurSolution from "./OurSolution";
 
 export {
-    HeroThing
+    HeroThing,
+    ProblemImpact,
+    OurSolution
 }
