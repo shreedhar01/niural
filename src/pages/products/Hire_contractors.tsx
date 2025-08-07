@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Advantages, AiDrivenExcellence, Features, HearFromClient, HeroBanner } from "../../components/products";
+import { Advantages, AiDrivenExcellence, Features, GetStarted, HearFromClient, HeroBanner } from "../../components/products";
 import { hire_contractor_img } from "../../assets/products"
 import { Banknote, BriefcaseBusiness, DoorOpen, Earth, Globe, HandFist, Handshake, Network, Newspaper, ReceiptText, Rocket, Signature, Snowflake, Timer, Upload, UserCheck } from "lucide-react";
 
@@ -133,6 +133,7 @@ const Hire_contractor: React.FC = () => {
             <AiDrivenExcellence
                 ai_driven_excellence={ai_driven_excellence}
             />    
+            <GetStarted/>
         </div>
     )
 }

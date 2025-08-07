@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Advantages, AiDrivenExcellence, Features, HearFromClient, HeroBanner } from "../../components/products";
+import { Advantages, AiDrivenExcellence, Features, GetStarted, HearFromClient, HeroBanner } from "../../components/products";
 import { hris_img } from "../../assets/products";
 import { Check, Gauge, Hourglass, Medal, Monitor, ReceiptText, Rocket, Scale, Settings, Sparkle, Timer, TimerIcon, TrendingUp, UserPlus, Volume1 } from "lucide-react";
 
@@ -127,6 +127,7 @@ const Hris: React.FC = () => {
             <AiDrivenExcellence
                 ai_driven_excellence={ai_driven_excellence}
             />
+            <GetStarted/>
         </div>
     )
 }

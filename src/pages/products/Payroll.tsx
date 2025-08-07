@@ -3,6 +3,7 @@ import {
     Advantages,
     AiDrivenExcellence,
     Features,
+    GetStarted,
     HearFromClient,
     HeroBanner,
     InfiniteMove
@@ -44,6 +45,7 @@ import {
     visa,
     wells_fargo
 } from "../../assets/products/payroll"
+
 
 const Payroll: React.FC = () => {
     useEffect(() => {
@@ -202,6 +204,8 @@ const Payroll: React.FC = () => {
             <AiDrivenExcellence
                 ai_driven_excellence={ai_driven_excellence}
             />
+
+            <GetStarted/>
         </div>
     )
 }

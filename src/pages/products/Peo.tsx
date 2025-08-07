@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Advantages, AiDrivenExcellence, Features, HearFromClient, HeroBanner, InfiniteMove } from "../../components/products";
+import { Advantages, AiDrivenExcellence, Features, GetStarted, HearFromClient, HeroBanner, InfiniteMove } from "../../components/products";
 import { product2 } from "../../assets/landing_images/products";
 import {
     aetna,
@@ -162,6 +162,8 @@ const Peo: React.FC = () => {
             <AiDrivenExcellence
                 ai_driven_excellence={ai_driven_excellence}
             />
+
+            <GetStarted/>
         </div>
     )
 }

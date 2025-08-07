@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Advantages, AiDrivenExcellence, Features, HearFromClient, HeroBanner } from "../../components/products";
+import { Advantages, AiDrivenExcellence, Features, GetStarted, HearFromClient, HeroBanner } from "../../components/products";
 import { wallet_img } from "../../assets/products";
 import { Book, BriefcaseBusiness, Coins, Globe, Globe2, HandHelping, Hourglass, Landmark, LibraryBig, Play, Rocket, Sparkle, User } from "lucide-react";
 
@@ -113,6 +113,8 @@ const Wallet: React.FC = () => {
             <AiDrivenExcellence
                 ai_driven_excellence={ai_driven_excellence}
             />
+
+            <GetStarted/>
         </div>
     )
 }

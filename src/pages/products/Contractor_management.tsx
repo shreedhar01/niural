@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Advantages, AiDrivenExcellence, Features, HearFromClient, HeroBanner } from "../../components/products";
+import { Advantages, AiDrivenExcellence, Features, GetStarted, HearFromClient, HeroBanner } from "../../components/products";
 import { product4 } from "../../assets/landing_images/products";
 import {
     ArrowUpRight,
@@ -138,6 +138,7 @@ const Contractor_management: React.FC = () => {
             <AiDrivenExcellence
                 ai_driven_excellence={ai_driven_excellence}
             />
+            <GetStarted/>
         </div>
     )
 }

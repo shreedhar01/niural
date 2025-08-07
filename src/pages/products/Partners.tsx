@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Advantages, AiDrivenExcellence, Features, HearFromClient, HeroBanner } from "../../components/products";
+import { Advantages, AiDrivenExcellence, Features, GetStarted, HearFromClient, HeroBanner } from "../../components/products";
 import { partners_img } from "../../assets/products";
 import { Banknote, Bug, Earth, File, Hourglass, Monitor, Newspaper, Snowflake, Sparkle, TrendingDown, Unplug, Users } from "lucide-react";
 
@@ -103,6 +103,7 @@ const Partners: React.FC = () => {
             <AiDrivenExcellence
                 ai_driven_excellence={ai_driven_excellence}
             />
+            <GetStarted/>
         </div>
     )
 }

@@ -4,6 +4,7 @@ import Features from "./Features"
 import Advantages from "./Advantages"
 import HearFromClient from "./HearFromClient"
 import AiDrivenExcellence from "./AiDrivenExcellence"
+import GetStarted from "./GetStarted"
 
 
 export {
@@ -12,5 +13,6 @@ export {
     Features,
     Advantages,
     HearFromClient,
-    AiDrivenExcellence
+    AiDrivenExcellence,
+    GetStarted
 }
