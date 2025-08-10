@@ -1,6 +1,11 @@
 import React from "react";
-import { HeroThing, OurSolution, ProblemImpact } from "../../components/solution";
+import { Features, HeroThing, OurSolution, ProblemImpact } from "../../components/solution";
 import { CircleGauge, Globe, Sparkle } from "lucide-react";
+import {
+    automation,
+    compliance,
+    save
+} from "../../assets/solutions"
 
 const HR: React.FC = () => {
     const hero_thing = [
@@ -27,15 +32,61 @@ const HR: React.FC = () => {
             description: "Quickly add team members across borders with minimal manual input."
         },
         {
-            icon: <Sparkle/>,
+            icon: <Sparkle />,
             title: "AI-Powered Compliance",
             description: "Advanced AI SuperAgents monitor and adhere to the latest local regulations and labor requirements."
         },
         {
-            icon: <CircleGauge/>,
+            icon: <CircleGauge />,
             title: "Effective Performance Management",
             description: "Streamline employee evaluations, feedback cycles, and goal-setting for sustained productivity."
         },
+    ]
+
+    const features = [
+        {
+            image: automation,
+            title: "Automation",
+            content: [
+                {
+                    title: "Smart Calculations",
+                    description: "Automatically handle taxes, pensions, insurance, and benefits, minimizing manual errors and freeing HR to focus on strategic initiatives."
+                },
+                {
+                    title: "Scheduled Disbursements",
+                    description: "Automate pay cycles for timely, consistent compensation — boosting employee satisfaction and supporting HR objectives."
+                }
+            ]
+        },
+        {
+            image: compliance,
+            title: "Compliance",
+            content: [
+                {
+                    title: "Real-Time Regulatory Updates",
+                    description: "Our AI SuperAgents engine continuously tracks and applies labor law changes, keeping your HR team compliant."
+                },
+                {
+                    title: "Audit-Ready Reporting",
+                    description: "Generate detailed, compliant reports for internal stakeholders, auditors, or regulators at any time."
+                }
+            ]
+        },
+        {
+            image: save,
+            title: "Cost-Effectiveness",
+            content: [
+                {
+                    title: "Transparent Exchange Rates",
+                    description: "Get access to accurate, competitive currency conversions to minimize costs for cross-border payroll, keeping your finance team happy."
+                },
+                {
+                    title: "Unified Management",
+                    description: "Centralize employee data across multiple countries in one dashboard, reducing administrative workload and costs."
+                }
+            ]
+        },
+
     ]
 
     return (
@@ -51,6 +102,10 @@ const HR: React.FC = () => {
             <OurSolution
                 our_solution={our_solution}
                 easy_workflow={easy_workflow}
+            />
+
+            <Features
+                features={features}
             />
 
         </div>

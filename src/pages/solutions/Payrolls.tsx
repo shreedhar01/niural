@@ -1,6 +1,11 @@
 import React from "react";
-import { HeroThing, OurSolution, ProblemImpact } from "../../components/solution";
+import { Features, HeroThing, OurSolution, ProblemImpact } from "../../components/solution";
 import { Calculator, Database, WalletCards } from "lucide-react";
+import {
+    automation,
+    compliance,
+    save
+} from "../../assets/solutions"
 
 const Payrolls: React.FC = () => {
     const hero_thing = [
@@ -38,6 +43,52 @@ const Payrolls: React.FC = () => {
             description: "Pay employees around the world in local currencies with transparent, industry-leading exchange rates."
         },
     ]
+
+    const features = [
+        {
+            image: automation,
+            title: "Automation",
+            content: [
+                {
+                    title: "Smart Calculations",
+                    description: "Auto-deduction of taxes, pensions, and benefits per region."
+                },
+                {
+                    title: "Scheduled Disbursements",
+                    description: "Never miss a payday with built-in reminders and automated transfers."
+                }
+            ]
+        },
+        {
+            image: compliance,
+            title: "Compliance",
+            content: [
+                {
+                    title: "Real-Time Regulatory Updates",
+                    description: "Our AI engine tracks changes in labor laws and tax regulations globally."
+                },
+                {
+                    title: "Audit-Ready Reporting",
+                    description: "Keep things clean and organized with audit-ready reports and compliance document management."
+                }
+            ]
+        },
+        {
+            image: save,
+            title: "Save Money & Time",
+            content: [
+                {
+                    title: "Transparent Exchange Rates",
+                    description: "Reduce fees with industry-leading international currency conversions."
+                },
+                {
+                    title: "Ease of Management",
+                    description: "Manage payroll for multiple countries, jurisdictions, or subsidiaries from a single dashboard, cutting administrative costs and saving mental headspace."
+                }
+            ]
+        },
+
+    ]
     return (
         <div className="pt-[120px] ">
 
@@ -53,8 +104,12 @@ const Payrolls: React.FC = () => {
                 easy_workflow={easy_workflow}
             />
 
+            <Features
+                features={features}
+            />
         </div>
     )
 }
 
 export default Payrolls
+

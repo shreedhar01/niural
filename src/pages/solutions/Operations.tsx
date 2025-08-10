@@ -1,8 +1,13 @@
 import React from "react";
-import { HeroThing, OurSolution, ProblemImpact } from "../../components/solution";
+import { Features, HeroThing, OurSolution, ProblemImpact } from "../../components/solution";
 import { CircleGauge, Globe, Sparkle } from "lucide-react";
+import {
+    automation,
+    compliance,
+    save
+} from "../../assets/solutions"
 
-const Operations : React.FC = ()=>{
+const Operations: React.FC = () => {
     const hero_thing = [
         {
             title: "Operations",
@@ -22,12 +27,12 @@ const Operations : React.FC = ()=>{
 
     const easy_workflow = [
         {
-            icon: <Globe/>,
+            icon: <Globe />,
             title: "Onboard Globally",
             description: "Add employees across regions in minutes, centralizing global payroll operations into one dashboard."
         },
         {
-            icon: <Sparkle/>,
+            icon: <Sparkle />,
             title: "AI-Driven Compliance",
             description: "Our engine instantly applies local laws, taxes, and benefit rules, ensuring compliant hiring and accurate payouts every time."
         },
@@ -36,6 +41,52 @@ const Operations : React.FC = ()=>{
             title: "Effortless Payments",
             description: "Approve payroll and release funds in multiple currencies on schedule, with minimal manual intervention."
         },
+    ]
+
+    const features = [
+        {
+            image: automation,
+            title: "Automation",
+            content: [
+                {
+                    title: "Smart Calculations",
+                    description: "Automatically handle complex taxes, social contributions, and custom allowances - reducing errors and freeing your ops team to focus on big-picture goals."
+                },
+                {
+                    title: "Scheduled Disbursements",
+                    description: "Set up automated payments to maintain consistent workflows and prevent operational bottlenecks."
+                }
+            ]
+        },
+        {
+            image: compliance,
+            title: "Compliance",
+            content: [
+                {
+                    title: "Real-Time Regulatory Updates",
+                    description: "Our platform tracks global regulations so every transaction meets the latest local standards."
+                },
+                {
+                    title: "Audit-Ready Reporting",
+                    description: "Generate detailed records on demand for internal reviews, audits, or management insights."
+                }
+            ]
+        },
+        {
+            image: save,
+            title: "Cost-Effectiveness",
+            content: [
+                {
+                    title: "Transparent Exchange Rates",
+                    description: "Save on cross-border fees and gain predictable costs with transparent FX rates."
+                },
+                {
+                    title: "Unified Management",
+                    description: "Oversee multiple regions in one dashboard, cutting administrative overhead and saving time on daily operations."
+                }
+            ]
+        },
+
     ]
     return (
         <div className="pt-[120px] ">
@@ -50,6 +101,10 @@ const Operations : React.FC = ()=>{
             <OurSolution
                 our_solution={our_solution}
                 easy_workflow={easy_workflow}
+            />
+
+            <Features
+                features={features}
             />
         </div>
     )
