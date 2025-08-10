@@ -1,6 +1,6 @@
 import React from "react";
-import { Features, HeroThing, OurSolution, ProblemImpact } from "../../components/solution";
-import { Calculator, Database, WalletCards } from "lucide-react";
+import { Features, HeroThing, OurSolution, ProblemImpact, Usecases } from "../../components/solution";
+import { BriefcaseBusiness, Calculator, Database, Globe, Megaphone, WalletCards } from "lucide-react";
 import {
     automation,
     compliance,
@@ -89,6 +89,24 @@ const Payrolls: React.FC = () => {
         },
 
     ]
+
+    const usecases = [
+        {
+            icon: <Globe />,
+            title: "Tech Startups",
+            description: "Quickly scale teams in new regions without worrying about payroll compliance."
+        },
+        {
+            icon: <Megaphone />,
+            title: "Global Enterprises",
+            description: "Support payroll, benefits, and compliance in multiple countries with Niural’s entities or your own."
+        },
+        {
+            icon: <BriefcaseBusiness />,
+            title: "Consulting & Professional Services",
+            description: "Simplify staff payments and maintain accurate records for global clients."
+        },
+    ]
     return (
         <div className="pt-[120px] ">
 
@@ -106,6 +124,10 @@ const Payrolls: React.FC = () => {
 
             <Features
                 features={features}
+            />
+
+            <Usecases
+                usecases={usecases}
             />
         </div>
     )

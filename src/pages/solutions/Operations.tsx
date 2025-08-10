@@ -1,5 +1,5 @@
 import React from "react";
-import { Features, HeroThing, OurSolution, ProblemImpact } from "../../components/solution";
+import { Features, HeroThing, OurSolution, ProblemImpact, Usecases } from "../../components/solution";
 import { CircleGauge, Globe, Sparkle } from "lucide-react";
 import {
     automation,
@@ -88,6 +88,26 @@ const Operations: React.FC = () => {
         },
 
     ]
+
+    const usecases = [
+        {
+            icon: <Globe />,
+            title: "Onboard Globally",
+            description: "Add employees across regions in minutes, centralizing global payroll operations into one dashboard."
+        },
+        {
+            icon: <Sparkle />,
+            title: "AI-Driven Compliance",
+            description: "Our engine instantly applies local laws, taxes, and benefit rules, ensuring compliant hiring and accurate payouts every time."
+        },
+        {
+            icon: <CircleGauge />,
+            title: "Effortless Payments",
+            description: "Approve payroll and release funds in multiple currencies on schedule, with minimal manual intervention."
+        },
+    ]
+
+
     return (
         <div className="pt-[120px] ">
 
@@ -105,6 +125,10 @@ const Operations: React.FC = () => {
 
             <Features
                 features={features}
+            />
+
+            <Usecases
+                usecases={usecases}
             />
         </div>
     )

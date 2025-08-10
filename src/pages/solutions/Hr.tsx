@@ -1,6 +1,6 @@
 import React from "react";
-import { Features, HeroThing, OurSolution, ProblemImpact } from "../../components/solution";
-import { CircleGauge, Globe, Sparkle } from "lucide-react";
+import { Features, HeroThing, OurSolution, ProblemImpact, Usecases } from "../../components/solution";
+import { BriefcaseBusiness, CircleGauge, Globe, Megaphone, Sparkle } from "lucide-react";
 import {
     automation,
     compliance,
@@ -89,6 +89,24 @@ const HR: React.FC = () => {
 
     ]
 
+    const usecases = [
+        {
+            icon: <Globe />,
+            title: "Global Tech Companies",
+            description: "Quickly integrate international hires without manual and long onboarding processes, freeing HR to focus on culture and retention."
+        },
+        {
+            icon: <Megaphone />,
+            title: "Marketing & Advertising Agencies",
+            description: "Effortlessly recruit, onboard, and manage diverse teams across multiple regions, ensuring compliance with complex regulatory frameworks."
+        },
+        {
+            icon: <BriefcaseBusiness />,
+            title: "Professional Services Firms",
+            description: "Easily handle worker payments and manage misclassification risks, reinforcing trust and credibility."
+        },
+    ]
+
     return (
         <div className="pt-[120px] ">
 
@@ -106,6 +124,10 @@ const HR: React.FC = () => {
 
             <Features
                 features={features}
+            />
+
+            <Usecases
+                usecases={usecases}
             />
 
         </div>
