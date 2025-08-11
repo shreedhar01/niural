@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Benefits, Features, HeroThing, OurSolution, ProblemImpact, Usecases } from "../../components/solution";
+import { Accordion, Benefits, Features, HeroThing, OurSolution, ProblemImpact, Usecases } from "../../components/solution";
 import { ChartArea, CheckCircle, CircleGauge, FilePenLine, Globe, Quote, Sparkle } from "lucide-react";
 import {
     automation,
@@ -129,7 +129,20 @@ const Operations: React.FC = () => {
         },
     ]
 
-
+    const qna = [
+        {
+            heading: "How do we handle evolving regulations as we enter new markets?",
+            body: "Our AI continuously updates local labor and tax laws, ensuring that each new region’s payroll meets current legal requirements without extra manual research."
+        },
+        {
+            heading: "Is the platform secure for sensitive operational and financial data?",
+            body: "Yes. We employ robust encryption, comply with global data protection standards, and perform regular security audits to safeguard your information."
+        },
+        {
+            heading: "Can we integrate this solution with our current ERP or financial systems?",
+            body: "Absolutely. We provide 100+ integrations to connect with your existing operational, HR, and financial tools."
+        },
+    ]
     return (
         <div className="pt-[120px] ">
 
@@ -170,6 +183,10 @@ const Operations: React.FC = () => {
 
             <Benefits
                 benefits={benefits}
+            />
+
+            <Accordion
+                qna={qna}
             />
         </div>
     )

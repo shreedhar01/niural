@@ -4,6 +4,7 @@ import OurSolution from "./OurSolution";
 import Features from "./Features";
 import Usecases from "./Usecases";
 import Benefits from "./Benefit";
+import Accordion from "./Accordion";
 
 export {
     HeroThing,
@@ -11,5 +12,6 @@ export {
     OurSolution,
     Features,
     Usecases,
-    Benefits
+    Benefits,
+    Accordion
 }

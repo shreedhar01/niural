@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Benefits, Features, HeroThing, OurSolution, ProblemImpact, Usecases } from "../../components/solution";
+import { Accordion, Benefits, Features, HeroThing, OurSolution, ProblemImpact, Usecases } from "../../components/solution";
 import { BriefcaseBusiness, CircleGauge, Globe, Megaphone, Quote, Smile, Sparkle, User, UserCheck } from "lucide-react";
 import {
     automation,
@@ -128,6 +128,21 @@ const HR: React.FC = () => {
             description: "Leverage AI to stay current with international labor laws, minimizing legal risks and penalties."
         },
     ]
+
+    const qna = [
+        {
+            heading: "How do you keep up with constantly changing labor regulations?",
+            body: "Our AI engine updates in real-time, so it always applies the latest legal requirements to your hiring contracts and payroll calculations."
+        },
+        {
+            heading: "Is the platform secure and compliant with global data protection laws?",
+            body: "Yes. We use end-to-end encryption and comply with international data protection standards (like GDPR), ensuring your information stays safe."
+        },
+        {
+            heading: "Can I integrate this solution with my current HR systems?",
+            body: "Absolutely. We offer flexible APIs and pre-built integrations to seamlessly connect with your existing HRIS, ATS, and other HR tools."
+        },
+    ]
     return (
         <div className="pt-[120px] ">
 
@@ -168,6 +183,10 @@ const HR: React.FC = () => {
 
             <Benefits
                 benefits={benefits}
+            />
+
+            <Accordion
+                qna={qna}
             />
         </div>
     )

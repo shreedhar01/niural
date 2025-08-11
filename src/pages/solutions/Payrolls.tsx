@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
-import { Benefits, Features, HeroThing, OurSolution, ProblemImpact, Usecases } from "../../components/solution";
-import { BriefcaseBusiness, Calculator, Database, Globe, Megaphone, Smile, User, UserCheck, WalletCards } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { Accordion, Benefits, Features, HeroThing, OurSolution, ProblemImpact, Usecases } from "../../components/solution";
+import { BriefcaseBusiness, Calculator, ChevronDown, ChevronUp, Database, Globe, Megaphone, Smile, User, UserCheck, WalletCards } from "lucide-react";
 import {
     automation,
     compliance,
@@ -8,9 +8,9 @@ import {
 } from "../../assets/solutions"
 
 const Payrolls: React.FC = () => {
-    useEffect(()=>{
+    useEffect(() => {
         document.title = "Payroll | Niural"
-    },[])
+    }, [])
 
     const hero_thing = [
         {
@@ -129,6 +129,21 @@ const Payrolls: React.FC = () => {
             description: "Eliminate guesswork and minimize legal risks."
         },
     ]
+
+    const qna = [
+        {
+            heading: "How does the system handle changing regulations?",
+            body: "Our AI Superagents update in real-time, automatically adjusting calculations based on the latest legal requirements."
+        },
+        {
+            heading: "Is the platform secure and compliant with data protection laws?",
+            body: "Yes. We use end-to-end encryption, comply with GDPR and other global data protection standards, and undergo regular security audits."
+        },
+        {
+            heading: "Can I integrate this solution with my current HR systems?",
+            body: "Absolutely. We offer 100+ integrations to streamline data flow and reduce manual input."
+        },
+    ]
     return (
         <div className="pt-[120px] ">
 
@@ -164,9 +179,14 @@ const Payrolls: React.FC = () => {
             <Benefits
                 benefits={benefits}
             />
+
+            <Accordion
+                qna={qna}
+            />
         </div>
     )
 }
 
 export default Payrolls
+
 
