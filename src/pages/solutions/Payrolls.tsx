@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Accordion, Benefits, Features, HeroThing, OurSolution, ProblemImpact, Usecases } from "../../components/solution";
-import { BriefcaseBusiness, Calculator, ChevronDown, ChevronUp, Database, Globe, Megaphone, Smile, User, UserCheck, WalletCards } from "lucide-react";
+import { BriefcaseBusiness, Calculator, Database, Globe, Megaphone, Smile, User, UserCheck, WalletCards } from "lucide-react";
 import {
     automation,
     compliance,
