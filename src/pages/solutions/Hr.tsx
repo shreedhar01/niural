@@ -1,6 +1,6 @@
-import React from "react";
-import { Features, HeroThing, OurSolution, ProblemImpact, Usecases } from "../../components/solution";
-import { BriefcaseBusiness, CircleGauge, Globe, Megaphone, Sparkle } from "lucide-react";
+import React, { useEffect } from "react";
+import { Benefits, Features, HeroThing, OurSolution, ProblemImpact, Usecases } from "../../components/solution";
+import { BriefcaseBusiness, CircleGauge, Globe, Megaphone, Quote, Smile, Sparkle, User, UserCheck } from "lucide-react";
 import {
     automation,
     compliance,
@@ -8,6 +8,10 @@ import {
 } from "../../assets/solutions"
 
 const HR: React.FC = () => {
+    useEffect(()=>{
+            document.title = "HR | Niural"
+        },[])
+
     const hero_thing = [
         {
             title: "HR",
@@ -107,6 +111,23 @@ const HR: React.FC = () => {
         },
     ]
 
+    const benefits = [
+        {
+            icon: <User />,
+            title: "Reduce Administrative Load",
+            description: "Automate global hiring and onboarding to free HR for strategic tasks like workforce planning and employee development."
+        },
+        {
+            icon: <Smile />,
+            title: "Enhance Employee Satisfaction",
+            description: "Deliver timely, accurate payments that build trust, boost morale, and improve retention."
+        },
+        {
+            icon: <UserCheck />,
+            title: "Stay Confidently Compliant",
+            description: "Leverage AI to stay current with international labor laws, minimizing legal risks and penalties."
+        },
+    ]
     return (
         <div className="pt-[120px] ">
 
@@ -130,6 +151,24 @@ const HR: React.FC = () => {
                 usecases={usecases}
             />
 
+            <div className="flex items-center justify-center w-full">
+                <div className="flex flex-col gap-y-16 w-full md:w-[1280px] px-2 md:px-0 py-32">
+                    <div className="flex gap-x-2">
+                        <span className=""><Quote/></span>
+                        <p className=" text-3xl font-medium text-gray-600">Since adopting this platform, our HR team has reclaimed countless hours lost to manual payroll calculations and staffing management. Our employees get paid accurately, on time, and we've reduced compliance issues to virtually zero. It's a game-changer for global HR operations.</p>
+                        
+
+                    </div>
+                    <div>
+                        <p className="font-medium md:text-xl">Anna Luslow</p>
+                        <p className="text-xl">HR Director, Label Staffing Solutions</p>
+                    </div>
+                </div>
+            </div>
+
+            <Benefits
+                benefits={benefits}
+            />
         </div>
     )
 }

@@ -1,6 +1,6 @@
-import React from "react";
-import { Features, HeroThing, OurSolution, ProblemImpact, Usecases } from "../../components/solution";
-import { CircleGauge, Globe, Sparkle } from "lucide-react";
+import React, { useEffect } from "react";
+import { Benefits, Features, HeroThing, OurSolution, ProblemImpact, Usecases } from "../../components/solution";
+import { ChartArea, CheckCircle, CircleGauge, FilePenLine, Globe, Quote, Sparkle } from "lucide-react";
 import {
     automation,
     compliance,
@@ -8,6 +8,10 @@ import {
 } from "../../assets/solutions"
 
 const Operations: React.FC = () => {
+    useEffect(()=>{
+            document.title = "Operations | Niural"
+        },[])
+
     const hero_thing = [
         {
             title: "Operations",
@@ -107,6 +111,24 @@ const Operations: React.FC = () => {
         },
     ]
 
+    const benefits = [
+        {
+            icon: <CheckCircle />,
+            title: "Get More Done",
+            description: "Cut back on manual payroll tasks so your team can focus on bigger priorities and meaningful improvements."
+        },
+        {
+            icon: <ChartArea />,
+            title: "Keep Costs Predictable",
+            description: "Avoid penalties, reduce admin overhead, and handle payments without surprises."
+        },
+        {
+            icon: <FilePenLine />,
+            title: "Stay Compliant at Scale",
+            description: "Confidently expand into new markets and regions with up-to-date labor regulations and no extra hassle."
+        },
+    ]
+
 
     return (
         <div className="pt-[120px] ">
@@ -129,6 +151,25 @@ const Operations: React.FC = () => {
 
             <Usecases
                 usecases={usecases}
+            />
+
+            <div className="flex items-center justify-center w-full">
+                <div className="flex flex-col gap-y-16 w-full md:w-[1280px] px-2 md:px-0 py-32">
+                    <div className="flex gap-x-2">
+                        <span className=""><Quote/></span>
+                        <p className=" text-3xl font-medium text-gray-600">Before Niural, our payments and compliance process for fund payments was slow, and managing payments took a very long time. With Niural Pay, we have streamlined both receivables and payables, and are able to handle a lot more clients than we could previously. Niural has been a game changer for us.</p>
+                        
+
+                    </div>
+                    <div>
+                        <p className="font-medium md:text-xl">Kwame Lewis</p>
+                        <p className="text-xl">Co-Founder, LewisLevy Consulting</p>
+                    </div>
+                </div>
+            </div>
+
+            <Benefits
+                benefits={benefits}
             />
         </div>
     )

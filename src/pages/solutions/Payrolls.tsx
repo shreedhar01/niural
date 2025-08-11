@@ -1,6 +1,6 @@
-import React from "react";
-import { Features, HeroThing, OurSolution, ProblemImpact, Usecases } from "../../components/solution";
-import { BriefcaseBusiness, Calculator, Database, Globe, Megaphone, WalletCards } from "lucide-react";
+import React, { useEffect } from "react";
+import { Benefits, Features, HeroThing, OurSolution, ProblemImpact, Usecases } from "../../components/solution";
+import { BriefcaseBusiness, Calculator, Database, Globe, Megaphone, Smile, User, UserCheck, WalletCards } from "lucide-react";
 import {
     automation,
     compliance,
@@ -8,6 +8,10 @@ import {
 } from "../../assets/solutions"
 
 const Payrolls: React.FC = () => {
+    useEffect(()=>{
+        document.title = "Payroll | Niural"
+    },[])
+
     const hero_thing = [
         {
             title: "Payroll",
@@ -107,6 +111,24 @@ const Payrolls: React.FC = () => {
             description: "Simplify staff payments and maintain accurate records for global clients."
         },
     ]
+
+    const benefits = [
+        {
+            icon: <User />,
+            title: "Reduce Costs",
+            description: "Save up to 25% on payroll management expenses."
+        },
+        {
+            icon: <Smile />,
+            title: "Increase Productivity",
+            description: "Free HR teams from manual calculations, letting them focus on strategic tasks."
+        },
+        {
+            icon: <UserCheck />,
+            title: "Stay Compliant",
+            description: "Eliminate guesswork and minimize legal risks."
+        },
+    ]
     return (
         <div className="pt-[120px] ">
 
@@ -128,6 +150,19 @@ const Payrolls: React.FC = () => {
 
             <Usecases
                 usecases={usecases}
+            />
+
+            {/* 
+  ───────────────────────────────────────────────────────────
+  |  CASE STUDIES (To Do)                                   |
+  |  -------------------------------------------------------|
+  |  Replace this with a real banner component or JSX       |
+  |  element when you’re ready to display case studies.     |
+  ───────────────────────────────────────────────────────────
+*/}
+
+            <Benefits
+                benefits={benefits}
             />
         </div>
     )

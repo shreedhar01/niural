@@ -1,17 +1,17 @@
 import React from "react";
 
-interface IEasyWorkflow{
-    icon:React.ReactNode,
-    title:string,
-    description:string
+interface IEasyWorkflow {
+    icon: React.ReactNode,
+    title: string,
+    description: string
 }
 
-interface IOurSolution{
-    our_solution:string,
-    easy_workflow:IEasyWorkflow[]
+interface IOurSolution {
+    our_solution: string,
+    easy_workflow: IEasyWorkflow[]
 }
 
-const OurSolution: React.FC<IOurSolution> = ({our_solution,easy_workflow}) => {
+const OurSolution: React.FC<IOurSolution> = ({ our_solution, easy_workflow }) => {
     return (
         <div className="flex items-center justify-center w-full bg-gray-100">
             <div className="flex flex-col gap-y-8 md:w-[1280px] pb-16 pt-20 md:pt-40 px-2 ">
@@ -22,7 +22,7 @@ const OurSolution: React.FC<IOurSolution> = ({our_solution,easy_workflow}) => {
 
                 <div className="flex flex-col gap-y-4">
                     <p className="text-xl font-medium">Easy Workflow</p>
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-y-8">
+                    <div className="flex flex-col md:flex-row justify-between gap-y-8">
                         {
                             easy_workflow.map(i =>
                                 <SimpleCard
