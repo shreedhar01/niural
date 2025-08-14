@@ -190,3 +190,19 @@
     /* bottom-left */  linear-gradient(currentColor,currentColor) bottom left  / 20px 2px no-repeat,
                        linear-gradient(currentColor,currentColor) bottom left  / 2px 20px no-repeat;
 }
+
+
+.box{
+  animation:rotateBox  6s linear 2s infinite;
+  @apply absolute origin-bottom-right bottom-0 right-1/2 rotate-45
+}
+
+@keyframes rotateBox {
+  from {
+    transform: rotate(-140deg);
+  }
+
+  to {
+    transform: rotate(45deg);
+  }
+}
