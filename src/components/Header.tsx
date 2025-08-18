@@ -20,7 +20,8 @@ const Header: React.FC = () => {
     const navigate = useNavigate()
     const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
 
-    const handleMouseLeave = () => {
+    const handleMouseLeave = (item:string) => {
+        if(hover === item) return
         const timeout = setTimeout(() => {
             setHover("");
         }, 200);
@@ -93,7 +94,7 @@ const Header: React.FC = () => {
                                         key={item}
                                         className="flex gap-1 cursor-pointer hover:bg-gray-100 relative p-2 rounded"
                                         onMouseEnter={(e) => handleMouseEnter(item, e)}
-                                        onMouseLeave={handleMouseLeave}
+                                        onMouseLeave={() => handleMouseLeave(item)}
                                     >
                                         {item} {item === hover ? <Minus /> : <ChevronDown />}
                                     </li>

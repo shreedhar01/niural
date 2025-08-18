@@ -4,11 +4,10 @@ import {
     rader_svg,
     rotating_svg
 } from "../../assets/resources"
-import { Check, CircleCheck, CircleX, CloudUpload, FilePlus, Sparkle } from "lucide-react";
+import { CalendarRange, Check, Circle, CircleCheck, CirclePlus, CircleX, Clock, CloudUpload, FilePlus, Lightbulb, ScanText, Sparkle, Swords, TextSearch, WandSparkles } from "lucide-react";
 import { Button } from "../../components";
 
 const AiRiskAnalyzer: React.FC = () => {
-
 
 
     const [file, setFile] = useState<File[]>([])
@@ -19,7 +18,6 @@ const AiRiskAnalyzer: React.FC = () => {
             fileInputRef.current.click()
         }
     }
-
 
 
     const [notify, setNotify] = useState<{ type: string, content: string }>({ type: "", content: "" })
@@ -39,10 +37,63 @@ const AiRiskAnalyzer: React.FC = () => {
     }, [notify, paused])
 
 
-
     const [analyze, setAnalyze] = useState(true)
 
 
+    const risk_analyzer_work = [
+        {
+            icon: <CalendarRange />,
+            title: "AI Contract Summarization",
+            content: "Don't waste hours reading legal jargon. Risk Analyzer instantly summarizes contracts, highlighting key points, deliverables, and obligations—so your team can make faster decisions, without the noise."
+        },
+        {
+            icon: <CirclePlus />,
+            title: "Risk Detection",
+            content: "Our AI reads between the lines. It flags vague language, one-sided clauses, hidden penalties, and potential legal landmines—before you sign anything."
+        },
+        {
+            icon: <Lightbulb />,
+            title: "Smart Recommendations",
+            content: "Risk Analyzer doesn't stop at detection. It suggests contract language that better protects your business interests and aligns with industry norms."
+        },
+        {
+            icon: <ScanText />,
+            title: "Compliance Checker",
+            content: "Automatically scan agreements for potential violations against local, state, and federal regulations. Stay compliant. Stay safe."
+        },
+        {
+            icon: <TextSearch />,
+            title: "Contract “Favor Score”",
+            content: "Ever wonder if a contract actually benefits you? Risk Analyzer gives each contract a Favorability Score—so you know exactly how balanced (or biased) the deal really is"
+        },
+    ]
+
+
+    const use_risk_analyzer = [
+        {
+            icon: <Clock className="h-4" />,
+            content: "Save hours of manual review"
+        },
+        {
+            icon: <CircleX className="h-4" />,
+            content: "Avoid costly mistakes hidden in fine print"
+        },
+        {
+            icon: <WandSparkles className="h-4" />,
+            content: "Empower non-legal teams to make smart decisions"
+        },
+        {
+            icon: <Swords className="h-4" />,
+            content: "Stay compliant across multiple jurisdictions"
+        }
+    ]
+
+    const who_is_it_for = [
+        "Founders & Executives – making fast, high-stakes decisions",
+        "Legal Teams – for a first-pass review before deep dives",
+        "Finance & Ops Leaders – evaluating vendor, partner, or customer terms",
+        "HR & Talent Teams – reviewing employment or benefits contracts"
+    ]
     return (
         <div className="pt-[120px]">
 
@@ -64,7 +115,8 @@ const AiRiskAnalyzer: React.FC = () => {
                 <p>{notify.content}</p>
             </div>
 
-            <div className={`flex items-center justify-center w-full ${ analyze ? "pb-[650px] md:pb-[500px]":"pb-[500px] md:pb-[250px]"}`}>
+            {/* hero */}
+            <div className={`flex items-center justify-center w-full ${analyze ? "pb-[650px] md:pb-[500px]" : "pb-[500px] md:pb-[250px]"}`}>
                 <div className="flex flex-col items-center justify-center w-full md:w-[1280px] ">
                     <div
                         className="relative flex flex-col items-center justify-center w-full md:w-[1280px] px-2 md:px-0 bg-no-repeat bg-cover md:bg-contain bg-center min-h-[300px] md:min-h-[600px] overflow-hidden"
@@ -187,6 +239,71 @@ const AiRiskAnalyzer: React.FC = () => {
                     </div>
                 </div>
             </div>
+
+            {/* what risk analyzer  */}
+            <div className="flex items-center justify-center w-full bg-gray-100">
+                <div className="flex flex-col gap-y-8 md:w-[1280px] px-2 md:px-0 py-20">
+                    <div className="flex flex-col gap-y-2">
+                        <p className="text-xl md:text-3xl font-medium text-gray-700">What Risk Analyzer Does</p>
+                        <p className="text-gray-500">Powerful tools designed to help you analyze, understand, and optimize every contract.</p>
+                    </div>
+                    <div className="flex flex-wrap gap-4">
+                        {
+                            risk_analyzer_work.map((v, i) =>
+                                <div key={i} className="flex flex-col gap-y-4 border border-gray-300 md:min-w-30/100 md:max-w-32/100 rounded-2xl p-4 bg-white">
+                                    <div className="flex items-center gap-x-2">
+                                        <div className="text-violet-500 bg-violet-200 rounded-full p-2">
+                                            {v.icon}
+                                        </div>
+                                        <p className="text-lg md:text-xl font-medium">{v.title}</p>
+                                    </div>
+                                    <p className="text-gray-500">{v.content}</p>
+                                </div>
+                            )
+                        }
+                    </div>
+
+                </div>
+            </div>
+
+            <div className="flex items-center justify-center w-full">
+                <div className="flex items-center justify-center w-full md:w-[1280px] px-2 md:px-0 py-20">
+                    <div className="flex flex-col md:flex-row md:justify-between w-full gap-y-8">
+
+                        <div className="flex flex-col gap-y-4 w-full md:w-1/2">
+                            <p className="text-lg md:text-2xl font-medium">Why use Risk Analyzer?</p>
+                            {
+                                use_risk_analyzer.map((v, i) =>
+                                    <div key={i} className="flex flex-col justify-center py-1 md:py-2 gap-y-2">
+                                        <div className="flex items-center gap-x-1">
+                                            {v.icon}
+                                            <p className="text-gray-600">{v.content}</p>
+                                        </div>
+                                        <div className="bg-gradient-to-r from-gray-400 to-white h-[2px] rounded"></div>
+                                    </div>
+                                )
+                            }
+                        </div>
+
+                        <div className="flex flex-col gap-y-4 w-full md:w-1/2">
+                            <p className="text-lg md:text-2xl font-medium">Who it's for</p>
+                            {
+                                who_is_it_for.map((v, i) =>
+                                    <div key={i} className="flex flex-col justify-center py-1 md:py-2 md:gap-y-2">
+                                        <div className="flex items-center md:gap-x-1">
+                                            <Circle className="text-green-500 h-2"/>
+                                            <p className="text-gray-600">{v}</p>
+                                        </div>
+                                        <div className="bg-gradient-to-r from-gray-500 to-white h-[2px] rounded"></div>
+                                    </div>
+                                )
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* last card remain */}
         </div>
     )
 }
