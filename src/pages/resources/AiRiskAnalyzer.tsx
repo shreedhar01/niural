@@ -2,9 +2,25 @@ import React, { useEffect, useRef, useState } from "react";
 import {
     button_svg,
     rader_svg,
-    rotating_svg
+    rotating_svg,
+    footer_radial_black
 } from "../../assets/resources"
-import { CalendarRange, Check, Circle, CircleCheck, CirclePlus, CircleX, Clock, CloudUpload, FilePlus, Lightbulb, ScanText, Sparkle, Swords, TextSearch, WandSparkles } from "lucide-react";
+import {
+    CalendarRange,
+    Check, Circle,
+    CircleCheck,
+    CirclePlus,
+    CircleX,
+    Clock,
+    CloudUpload,
+    FilePlus,
+    Lightbulb,
+    ScanText,
+    Sparkle,
+    Swords,
+    TextSearch,
+    WandSparkles
+} from "lucide-react";
 import { Button } from "../../components";
 
 const AiRiskAnalyzer: React.FC = () => {
@@ -291,7 +307,7 @@ const AiRiskAnalyzer: React.FC = () => {
                                 who_is_it_for.map((v, i) =>
                                     <div key={i} className="flex flex-col justify-center py-1 md:py-2 md:gap-y-2">
                                         <div className="flex items-center md:gap-x-1">
-                                            <Circle className="text-green-500 h-2"/>
+                                            <Circle className="text-green-500 h-2" />
                                             <p className="text-gray-600">{v}</p>
                                         </div>
                                         <div className="bg-gradient-to-r from-gray-500 to-white h-[2px] rounded"></div>
@@ -304,6 +320,29 @@ const AiRiskAnalyzer: React.FC = () => {
             </div>
 
             {/* last card remain */}
+            <div className="flex items-center justify-center w-full">
+                <div
+                    className="flex flex-col md:items-center justify-center w-full md:w-[1280px] bg-no-repeat bg-cover bg-center min-h-[370px] rounded-2xl gap-y-2 mx-2 md:mx-0 px-8 my-20"
+                    style={{ backgroundImage: `url("${footer_radial_black}")` }}
+                >
+                    <p className="text-white md:text-5xl font-medium">Don’t Sign Blind</p>
+                    <p className="md:text-xl text-neutral-400">Sign Smart—with Risk Analyzer</p>
+                    <p className="text-neutral-500 my-4">Try it today and protect your business before the dotted line.</p>
+                    <div className="flex gap-4">
+                        <Button
+                            className="rounded"
+                            children="Get Early Access"
+                            onClick={() => window.open("https://app.niural.com/auth/employer/signup", "_blank", "")}
+                        />
+                        <Button
+                            variant="secondary"
+                            className="rounded"
+                            children="Get Early Access"
+                            onClick={() => window.open("https://meetings.hubspot.com/niural/book-a-demo?uuid=396db3b0-296e-4d1e-b7a5-450886a6e0bb", "_blank", "")}
+                        />
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

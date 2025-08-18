@@ -20,8 +20,25 @@ const Header: React.FC = () => {
     const navigate = useNavigate()
     const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
 
-    const handleMouseLeave = (item:string) => {
-        if(hover === item) return
+    const side = (e:React.MouseEvent)=>{
+        const rect = e.currentTarget.getBoundingClientRect()
+
+        const topDist = Math.abs(e.clientY-rect.top)
+        const buttomDist = Math.abs(e.clientY-rect.bottom)
+        const leftDist = Math.abs(e.clientX-rect.left)
+        const rightDist = Math.abs(e.clientX-rect.right)
+
+        const min = Math.min(topDist,buttomDist,leftDist,rightDist)
+
+        if(min === topDist) return "top"; 
+        if(min === buttomDist) return "buttom"; 
+        if(min === leftDist) return "left"; 
+        if(min === rightDist) return "right"; 
+    }
+
+    const handleMouseLeave = async(item:string,e:React.MouseEvent) => {
+        const s = await side(e)
+        if( s !== "top" && hover === item) return
         const timeout = setTimeout(() => {
             setHover("");
         }, 200);
@@ -38,6 +55,8 @@ const Header: React.FC = () => {
     const handleMouseEnter = (item: string, event: React.MouseEvent) => {
         setHover(item)
         const rect = event.currentTarget.getBoundingClientRect()
+        // console.log(rect);
+        
         setDropdownPosition({
             x: rect.left,
             y: rect.bottom + 5
@@ -94,7 +113,7 @@ const Header: React.FC = () => {
                                         key={item}
                                         className="flex gap-1 cursor-pointer hover:bg-gray-100 relative p-2 rounded"
                                         onMouseEnter={(e) => handleMouseEnter(item, e)}
-                                        onMouseLeave={() => handleMouseLeave(item)}
+                                        onMouseLeave={(e) => handleMouseLeave(item,e)}
                                     >
                                         {item} {item === hover ? <Minus /> : <ChevronDown />}
                                     </li>
